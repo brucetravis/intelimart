@@ -1,0 +1,88 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #1e293b;
+    color: #faf8fc;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    z-index: 1000
+}
+
+.sidebar .logo h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #f8fafc;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sidebar .logo:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.sidebar .features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: red; */
+    flex: 1;
+}
+
+.sidebar .features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .features .middle, 
+.sidebar .features .bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+
+.sidebar .features ul h5 {
+    text-transform: uppercase;
+}
+
+.sidebar .features ul li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .features ul li.active {
+    background: linear-gradient(90deg, #4ade80, #16a34a);
+    color: #fff
+}
+
+
+.sidebar .features ul li:hover {
+    background-color: #334766;
+    cursor: pointer;
+    /* box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; */
+}
+
+.sidebar .features ul li:hover svg {
+    stroke-width: 2.5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+
+.sidebar .features ul li a{
+    color: #cbd5e1;
+    text-decoration: none;
+}
