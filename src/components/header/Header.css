@@ -1,0 +1,36 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    height: 60px;
+    width: calc(100% - 250px);
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem 0 5rem;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    z-index: 900
+}
+
+header .header-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #334155;
+    margin: 0;
+}
+
+header .header-info img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+}
