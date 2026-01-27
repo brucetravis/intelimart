@@ -167,6 +167,15 @@
     color: white;
 }
 
+.products-page button.update {
+    background-color: #ebb121;
+    color: white;
+}
+
+.products-page button.update:hover {
+    background-color: #c9991f;
+}
+
 .products-page button.edit:hover {
     background-color: #2380c6;
 }
