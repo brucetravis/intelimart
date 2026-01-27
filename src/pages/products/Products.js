@@ -120,6 +120,7 @@ export default function Products() {
 
                 <td>
                   <button className='edit'>Edit</button>
+                  <button className='update'>Update</button>
                   <button className='delete'>Delete</button>
                 </td>
               </tr>
