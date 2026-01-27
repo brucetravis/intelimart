@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import Products from './pages/products/Products';
 import Shop from './pages/shop/Shop';
+import Cart from './pages/cart/Cart';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path='/shop' element={<Shop />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/products' element={<Products />} />
       </Routes>
     </div>
