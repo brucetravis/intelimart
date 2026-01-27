@@ -71,11 +71,11 @@ export default function Sidebar() {
                     </li>
 
                     <li 
-                        className={location.pathname === "/categories" ? "active" : ""}
-                        onClick={() => navigate("/categories")}
+                        className={location.pathname === "/shop" ? "active" : ""}
+                        onClick={() => navigate("/shop")}
                     >
                         <Tag size={24} stroke="#fbbf24" />
-                        <a href="/categories">Categories</a>
+                        <a href="/shop">Shop</a>
                     </li>
 
                     <li 
