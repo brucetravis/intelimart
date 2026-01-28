@@ -5,6 +5,48 @@
     font-family: 'Arial', sans-serif;
 }
 
+.inventory-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+.inventory-controls .search-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+
+.inventory-controls button {
+    background-color: #2f80ed;
+    padding: 10px 20px;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.inventory-controls button:hover {
+    background-color: #2664b4;
+}
+
+
+.inventory-controls input {
+    padding: 8px 12px;
+    padding-left: 40px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px
+}
+
+
 .inventory-page table {
     width: 100%;
     border-collapse: collapse;

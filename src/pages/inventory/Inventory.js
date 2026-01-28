@@ -1,6 +1,6 @@
 import React from 'react'
 import './Inventory.css'
-import { PlusCircle } from 'lucide-react';
+import { PlusCircle, Search } from 'lucide-react';
 import Button from '../../components/buttons/Button';
 
 export default function Inventory() {
@@ -23,6 +23,27 @@ export default function Inventory() {
     <section
         className='inventory-page'
     >
+        <div
+            className='inventory-controls'
+        >
+            <Search 
+                size={20} 
+                stroke="#333" 
+                className='search-icon'
+            />
+
+            <input 
+                type='text'
+                placeholder='Search by Product name, SKU, Category'
+                className='inventory-search'
+            />
+
+            <button>
+                <PlusCircle size={24} stroke='#fff' />
+                Add Product
+            </button>
+        </div>
+
         <div
             className='inventory-table'
         >
