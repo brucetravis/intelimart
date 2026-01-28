@@ -1,6 +1,7 @@
 import React from 'react'
 import './Products.css'
 import { PlusCircle } from 'lucide-react';
+import Button from '../../components/buttons/Button';
 
 export default function Products() {
 
@@ -119,9 +120,9 @@ export default function Products() {
                 </td>
 
                 <td>
-                  <button className='edit'>Edit</button>
-                  <button className='update'>Update</button>
-                  <button className='delete'>Delete</button>
+                  <Button name="edit" text="Edit" />
+                  <Button name="update" text="Update" />
+                  <Button name="delete" text="Delete" />
                 </td>
               </tr>
             ))}
