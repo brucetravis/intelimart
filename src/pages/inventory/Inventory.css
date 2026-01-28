@@ -1,0 +1,148 @@
+.inventory-page {
+    margin-left: 15vw;
+    padding: 80px 40px 40px;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.inventory-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+.inventory-controls .search-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+
+.inventory-controls button {
+    background-color: #2f80ed;
+    padding: 10px 20px;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.inventory-controls button:hover {
+    background-color: #2664b4;
+}
+
+
+.inventory-controls input {
+    padding: 8px 12px;
+    padding-left: 40px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px
+}
+
+
+.inventory-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #eff2fc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.inventory-page table .empty-inventory {
+    width: 100%;
+    text-align: center;
+    color: #333333;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.inventory-page table .empty-inventory .empty-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.inventory-page table .empty-inventory .empty-wrapper:hover {
+    background-color: #bbc7ec;
+    padding: 2px 5px;
+    border-radius: 50px;
+}
+
+
+.inventory-page table th {
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #bbc7ec;
+}
+
+
+.inventory-page table .inventory-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.inventory-page table .inventory-name .inventory-image {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.inventory-page table .inventory-name .inventory-image:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.inventory-page table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333333;
+    border-bottom: 1px solid #e0e0e0;
+    transform: all 0.5s ease;
+}
+
+.inventory-page table tr:hover {
+    background-color: #dae5ff;
+    cursor: pointer;
+}
+
+
+.inventory-page table .status-inStock {
+    background-color: #d4f8e0; 
+    color: #27ae60; 
+    padding: 4px 8px; 
+    border-radius: 12px; 
+    font-weight: 600; 
+    display: inline-block;
+}
+
+.inventory-page table .status-outOfStock {
+    background-color: #ec9389;
+    color: #e74c3c;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.inventory-page table .status-lowStock {
+    background-color: #a9c5c7;
+    color: #269ea7;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
