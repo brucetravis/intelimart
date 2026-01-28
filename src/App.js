@@ -5,6 +5,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import Products from './pages/products/Products';
 import Shop from './pages/shop/Shop';
 import Cart from './pages/cart/Cart';
+import Inventory from './pages/inventory/Inventory';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/products' element={<Products />} />
+        <Route path='/inventory' element={<Inventory />} />
       </Routes>
     </div>
   );
