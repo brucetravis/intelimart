@@ -70,7 +70,7 @@ export default function Sidebar() {
                         <a href="/products">Products</a>
                     </li>
 
-                    <li 
+                    <li
                         className={location.pathname === "/shop" ? "active" : ""}
                         onClick={() => navigate("/shop")}
                     >
