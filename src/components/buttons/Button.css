@@ -21,6 +21,25 @@ button.adjust:hover {
   background-color: #c9991f;
 }
 
+button.view {
+  background-color: #ebb121;
+  color: white;
+}
+
+button.view:hover {
+  background-color: #c9991f;
+}
+
+
+button.block {
+  color: #fff;
+  background-color: #2b99ec;
+}
+
+button.block:hover {
+  background-color: #1e72b3;
+}
+
 button.edit:hover {
   background-color: #2380c6;
 }
