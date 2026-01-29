@@ -1,7 +1,7 @@
 import React from 'react'
 import './Customers.css'
 import Button from '../../components/buttons/Button';
-import { PlusCircle, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export default function Customers() {
 
