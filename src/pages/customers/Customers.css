@@ -77,7 +77,7 @@
 
 
 .customers-page table .status-active {
-    background-color: #66dd98;
+    background-color: #bff8d7;
     color: #169249;
     padding: 4px 8px;
     border-radius: 12px;
@@ -86,7 +86,7 @@
 }
 
 .customers-page .status-inactive {
-    background-color: #f3958a;
+    background-color: #ffcbc5;
     color: #e22b16;
     font-weight: 600;
     padding: 4px 8px;
