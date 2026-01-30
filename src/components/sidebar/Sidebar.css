@@ -44,7 +44,6 @@
 .sidebar .features .middle, 
 .sidebar .features .bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
 }
 
 
@@ -72,7 +71,6 @@
 .sidebar .features ul li:hover {
     background-color: #334766;
     cursor: pointer;
-    /* box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; */
 }
 
 .sidebar .features ul li:hover svg {
