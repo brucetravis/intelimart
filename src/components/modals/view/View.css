@@ -115,9 +115,26 @@
     cursor: pointer;
 }
 
-.view-section .title {
+.view-modal .view-section .title {
     color: #f59e0b;
     font-weight: 630;
     font-size: 18px;
 }
 
+
+.view-modal .ai-info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.view-modal .ai-info-stack > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-modal .ai-info-stack > div .title {
+    color: #111827;
+    font-size: 16px;
+}
