@@ -148,8 +148,8 @@
 }
 
 .products-page table .status-active {
-    background-color: #a0ffc8;
-    color: #169249;
+    background-color: #d4f8e0;
+    color: #27ae60;
     padding: 4px 8px;
     border-radius: 12px;
     font-weight: 600;
@@ -157,7 +157,7 @@
 }
 
 .products-page .status-outofstock {
-    background-color: #f3958a;
+    background-color: #fdc9c3;
     color: #e22b16;
     font-weight: 600;
     padding: 4px 8px;
@@ -165,7 +165,7 @@
     display: inline-block;
 }
 .products-page .status-disabled {
-    background-color: #76d6dd;
+    background-color: #d0fafd;
     color: #11a7af;
     font-weight: 600;
     padding: 4px 8px;

@@ -1,0 +1,147 @@
+.orders-page {
+    margin-left: 15vw;
+    padding: 80px 40px 40px;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.orders-page .orders-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* background-color: red; */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.orders-page .orders-controls .orders-search input {
+    padding: 8px 12px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.orders-page .orders-controls .orders-search input:focus {
+    border: 3px solid #3b7dd3;
+}
+
+.orders-page .orders-controls .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.orders-page .orders-controls .filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease
+}
+
+
+.orders-page .orders-controls .filters:hover {
+    cursor: pointer;
+}
+
+.orders-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #eff2fc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.orders-page table th {
+    background-color: #bbc7ec;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.orders-page table .orders-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.orders-page table .orders-name img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+
+.orders-page table .orders-name img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.orders-page table td:hover {
+    transition: all 0.5s ease
+}
+
+.orders-page table tbody tr:hover td {
+    cursor: pointer;
+    /* transform: scale(1.01); */
+    background-color: #dae5ff;
+}
+
+.orders-page table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333333;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+/* STATUS */
+.orders-page table .status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+
+.orders-page table .status.status-pending {
+    background-color: #faeacf;
+    color: #F59E0B;
+}
+
+.orders-page .status.status-paid {
+    background-color: #d9e6fc;
+    color: #488af3;
+}
+
+.orders-page .status.status-shipped {
+    background-color: #e2d9fa;
+    color: #7642f0;
+}
+
+
+.orders-page .status.status-completed {
+    background-color: #cdf7dc;
+    color: #21e669;
+}
+
+.orders-page .status.status-cancelled {
+    background-color: #fcd5d5;
+    color: #EF4444;
+}
+
+
+
+
+

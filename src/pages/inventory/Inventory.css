@@ -130,7 +130,7 @@
 }
 
 .inventory-page table .status-outOfStock {
-    background-color: #ec9389;
+    background-color: #fdc9c3;
     color: #e74c3c;
     padding: 4px 8px;
     border-radius: 12px;
@@ -139,7 +139,7 @@
 }
 
 .inventory-page table .status-lowStock {
-    background-color: #a9c5c7;
+    background-color: #d4f4f7;
     color: #269ea7;
     padding: 4px 8px;
     border-radius: 12px;
