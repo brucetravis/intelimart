@@ -3,11 +3,6 @@ import './Button.css'
 
 export default function Button({ name, text, onClick }) {
   return (
-    <button 
-      className={ name }
-      onClick={onClick}
-    >
-      { text }
-    </button>
+    <button className={ name } onClick={onClick}>{ text }</button>
   )
 }
