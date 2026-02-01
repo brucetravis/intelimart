@@ -9,6 +9,7 @@ import Inventory from './pages/inventory/Inventory';
 import Customers from './pages/customers/Customers';
 import Orders from './pages/orders/Orders';
 import Profile from './pages/profile/Profile';
+import Settings from './pages/settings/Settings';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/orders' element={<Orders />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/products' element={<Products />} />
+        <Route path='/settings' element={<Settings />} />
         <Route path='/customers' element={<Customers />} />
         <Route path='/inventory' element={<Inventory />} />
       </Routes>
