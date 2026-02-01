@@ -1,0 +1,97 @@
+.profile-page {
+    margin-left: 15vw;
+    padding: 80px 40px 40px;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.profile-page .profile-info,
+.profile-page .account-details,
+.profile-page .shipping-address,
+.profile-page .payment-methods .card-details {
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);;
+}
+
+
+.profile-page .profile-info img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+
+.profile-page .profile-info > div,
+.profile-page .account-details > div,
+.profile-page .shipping-address > div,
+.profile-page .payment-methods .card-details > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+
+.profile-page .profile-info > div .title,
+.profile-page .account-details > div .title,
+.profile-page .shipping-address > div .title,
+.profile-page .payment-methods .card-details > div .title {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #6d819c;
+}
+
+
+.profile-page .profile-info > div span:last-child {
+    font-weight: 700;
+}
+
+
+.profile-page .account-details {
+    width: 500px;
+    margin-bottom: 10vh;
+}
+
+
+.profile-page .profile-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.profile-page .account-details .profile-title svg {
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.profile-page .account-details .profile-title svg:hover {
+    transform: scale(1.05);
+}
+
+
+.profile-page .payment-methods .credit-card {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    padding: 12px;
+    background-color: #fff;
+    margin-bottom: 12px;
+}
+
+
+.profile-page .payment-methods .credit-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
