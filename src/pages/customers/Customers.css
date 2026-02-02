@@ -1,0 +1,97 @@
+.customers-page {
+    margin-left: 15vw;
+    padding: 80px 40px 40px;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.customer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.customer-controls .customer-search {
+    padding: 8px 12px;
+    padding-left: 40px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px
+}
+
+.customer-controls .search-icon {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    z-index: 1
+}
+
+.customers-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #eff2fc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.customers-page table th {
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #bbc7ec;
+}
+
+.customers-page img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50px
+}
+
+.customers-page table .customer-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.customers-page table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333333;
+    border-bottom: 1px solid #e0e0e0;
+    transform: all 0.5s ease;
+}
+
+.customers-page table tr:hover {
+    background-color: #dae5ff;
+    cursor: pointer;
+}
+
+
+.customers-page table .status-active {
+    background-color: #bff8d7;
+    color: #169249;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.customers-page .status-inactive {
+    background-color: #ffcbc5;
+    color: #e22b16;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+

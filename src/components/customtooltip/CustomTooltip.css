@@ -1,0 +1,17 @@
+.custom-tooltip {
+  background: #1e293b; /* dark premium background */
+  color: #f8fafc;
+  padding: 2px 4px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.custom-tooltip .label {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.custom-tooltip .value {
+  font-weight: 500;
+}
