@@ -10,6 +10,7 @@ import Customers from './pages/customers/Customers';
 import Orders from './pages/orders/Orders';
 import Profile from './pages/profile/Profile';
 import Settings from './pages/settings/Settings';
+import Analytics from './pages/analytics/Analytics';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/settings' element={<Settings />} />
         <Route path='/customers' element={<Customers />} />
         <Route path='/inventory' element={<Inventory />} />
+        <Route path='/analytics' element={<Analytics />} />
       </Routes>
     </div>
   );
