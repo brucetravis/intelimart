@@ -1,0 +1,29 @@
+.product-pie-chart {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-pie-chart:hover {
+    cursor: pointer;
+}
+
+.product-pie-chart h4 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.product-pie-chart svg:focus {
+  outline: none;
+  cursor: pointer;;
+}
+
+
+
+
+
+
