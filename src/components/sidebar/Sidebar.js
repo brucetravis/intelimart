@@ -51,11 +51,11 @@ export default function Sidebar() {
                     </li>
 
                     <li 
-                        className={location.pathname === "/reports" ? "active" : ""}
-                        onClick={() => navigate("/reports")}
+                        className={location.pathname === "/analytics" ? "active" : ""}
+                        onClick={() => navigate("/analytics")}
                     >
                         <BarChart2 size={24} stroke="#a79bfa" />
-                        <a href='/reports'>Reports</a>
+                        <a href='/analytics'>Analytics</a>
                     </li>
                 </ul>
 
