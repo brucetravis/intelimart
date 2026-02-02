@@ -1,12 +1,15 @@
 import React from 'react'
 import './Header.css'
-import { Bell } from 'lucide-react'
+import { Bell, Hand } from 'lucide-react'
 
 export default function Header({ title }) {
   return (
     <header>
-        <h3>{ title }</h3>
-        {/* <h3>HEADER</h3> */}
+        {/* <h3>{ title }</h3> */}
+        <div className='d-flex align-items-center'>
+            <h3>Welcome Back, Jensen Huang</h3>
+            <Hand size={24} stroke="#d9a066" />
+        </div>
 
         <div
             className='header-info'
