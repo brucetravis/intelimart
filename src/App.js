@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import Products from './pages/products/Products';
-import Inventory from './pages/inventory/Inventory';
 import Customers from './pages/customers/Customers';
 import Orders from './pages/orders/Orders';
 import Profile from './pages/profile/Profile';
