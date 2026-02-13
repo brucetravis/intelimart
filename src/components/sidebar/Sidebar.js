@@ -1,6 +1,6 @@
 import React from "react"
 import "./Sidebar.css"
-import { Archive, BarChart2, Box, CreditCard, LayoutDashboard, Package, Settings, ShoppingCart, Tag, User, Users } from "lucide-react"
+import { BarChart2, Box, LayoutDashboard, Package, Settings, User, Users } from "lucide-react"
 import { useLocation, useNavigate } from "react-router"
 
 export default function Sidebar() {
@@ -57,10 +57,6 @@ export default function Sidebar() {
                         <BarChart2 size={24} stroke="#a79bfa" />
                         <a href='/analytics'>Analytics</a>
                     </li>
-                </ul>
-
-                <ul className="middle">
-                    <h5>Tools</h5>
 
                     <li 
                         className={location.pathname === "/products" ? "active" : ""}
@@ -69,42 +65,6 @@ export default function Sidebar() {
                         <Box size={24} stroke="#f87171" />
                         <a href="/products">Products</a>
                     </li>
-
-                    <li
-                        className={location.pathname === "/shop" ? "active" : ""}
-                        onClick={() => navigate("/shop")}
-                    >
-                        <Tag size={24} stroke="#fbbf24" />
-                        <a href="/shop">Shop</a>
-                    </li>
-
-                    <li 
-                        className={location.pathname === "/cart" ? "active" : ""}
-                        onClick={() => navigate("/cart")}
-                    >
-                        <ShoppingCart size={24} stroke="#3b82f6" />
-                        <a href="/cart">Cart</a>
-                    </li>
-
-                    <li 
-                        className={location.pathname === "/inventory" ? "active" : ""}
-                        onClick={() => navigate("/inventory")}
-                    >
-                        <Archive size={24} stroke="#c084f6" />
-                        <a href="inventory">Inventory</a>
-                    </li>
-
-                    <li 
-                        className={location.pathname === "/payments" ? "active" : ""}
-                        onClick={() => navigate("/payments")}
-                    >
-                        <CreditCard size={24} stroke="#16a34a" />
-                        <a href="/payments">Payments</a>
-                    </li>
-                </ul>
-
-                <ul className="bottom">
-                    <h5>Settings</h5>
 
                     <li 
                         className={location.pathname === "/settings" ? "active" : ""}

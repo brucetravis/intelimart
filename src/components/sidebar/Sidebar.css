@@ -41,20 +41,11 @@
     margin: 0;
 }
 
-.sidebar .features .middle, 
-.sidebar .features .bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-.sidebar .features ul h5 {
-    text-transform: uppercase;
-}
-
 .sidebar .features ul li {
     font-size: 1.2rem;
     font-weight: 500;
     padding: 0.75rem 1rem;
+    margin-bottom: 2vh;
     border-radius: 5px;
     display: flex;
     align-items: center;
