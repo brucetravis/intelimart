@@ -11,3 +11,10 @@
   font-weight: 600;
   color: #111827;
 }
+
+.monthly-sales-chart svg,
+.monthly-sales-chart svg:focus,
+.monthly-sales-chart svg *:focus {
+  cursor: pointer;
+  outline: none;
+}

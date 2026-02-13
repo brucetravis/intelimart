@@ -1,19 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Analytics.css'
-import Kpi from '../../components/cards/Kpi'
-import { DollarSign, Package, Tag, Users } from 'lucide-react'
 import RevenueChart from '../../components/charts/revenue/RevenueChart'
 import Sales from '../../components/charts/sales/Sales'
+import OrdersChart from '../../components/charts/orders/Orders'
+import BestProduct from '../../components/charts/bestsellingproduct/BestProduct'
+import LowStockTable from '../../components/tables/LowStocks'
 
 export default function Analytics() {
-
-  // An array for for the card data
-  const kpiCards = [
-    { cardName: 'users-card active', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: '342' },
-    { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' }, 
-    { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: '130' },  
-    { cardName: 'top-product-sold', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Top Product Sold', cardStat: '3' }
-  ]
   
   // An array for the revenue chart
   const revenueData = [
@@ -42,29 +35,57 @@ export default function Analytics() {
     { month: 'Dec', sales: 300 }
   ];
 
+  // An array for for the Orders chart
+  const ordersData = [
+    { month: 'Jan', orders: 120 },
+    { month: 'Feb', orders: 150 },
+    { month: 'Mar', orders: 130 },
+    { month: 'Apr', orders: 160 },
+    { month: 'May', orders: 180 },
+    { month: 'Jun', orders: 200 },
+    { month: 'Jul', orders: 220 },
+    { month: 'Aug', orders: 210 },
+    { month: 'Sep', orders: 190 },
+    { month: 'Oct', orders: 230 },
+    { month: 'Nov', orders: 250 },
+    { month: 'Dec', orders: 300 }
+  ];
 
+  // Array for the pie chart
+  const bestSellingProducts = [
+    { name: 'Laptop', sold: 120 },
+    { name: 'Smartphone', sold: 90 },
+    { name: 'Headphones', sold: 60 },
+    { name: 'Smartwatch', sold: 30 },
+  ];
+
+  // Array of colors for each slice
+  const COLORS = ['#16a34a', '#facc15', '#3b82f6', '#a79bfa'];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+  }, [])
 
   return (
     <section
       className='analytics-page'
     >
-      <div
-        className='kpi-cards'
-      >
-        {kpiCards.map((card, index) => (
-          <Kpi
-            key={index}
-            cardName={card.cardName}
-            cardIcon={card.cardIcon}
-            cardText={card.cardText}
-            cardStat={card.cardStat}
-          />
-        ))}
-      </div>
+      <h4>Reports & Analytics</h4>
 
-      <div className='graphs'>
-        <RevenueChart data={revenueData} />
-        <Sales data={monthlySalesData} />
+      <div>
+        <div className='mb-3'>
+          <Sales data={monthlySalesData} />
+        </div>
+
+        <div className='graphs'>
+          <RevenueChart data={revenueData} />
+          <OrdersChart data={ordersData} />
+        </div>
+
+        <div className='graphs'>
+          <BestProduct data={bestSellingProducts} colors={COLORS} />
+          <LowStockTable />
+        </div>
       </div>
 
     </section>

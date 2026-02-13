@@ -5,54 +5,19 @@
     font-family: 'Arial', sans-serif;
 }
 
-
-.analytics-page .kpi-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-
-.analytics-page .card {
-    color: #111827;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.analytics-page .card.active{
-    background-color: #1e293b;
-    color: #f8fafc;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-
-.analytics-page .card:hover {
-    cursor: pointer;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+.analytics-page h4 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;   
 }
 
 .analytics-page .graphs {
     width: 100%;
-    /* display: flex;
-    align-items: center;
-    gap: 20px; */
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 3fr)); */
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
     gap: 20px;
+    margin-bottom: 3vh;
 }
 
 .analytics-page .graphs > * {

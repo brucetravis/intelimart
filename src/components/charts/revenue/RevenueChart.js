@@ -4,7 +4,7 @@ import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'rec
 
 export default function RevenueChart({ data }) {
   return (
-    <div
+    <main
         className='revenue-chart'
     >
         <h4>Revenue Over Time</h4>
@@ -32,6 +32,6 @@ export default function RevenueChart({ data }) {
             </LineChart>
         </ResponsiveContainer>
 
-    </div>
+    </main>
   )
 }
