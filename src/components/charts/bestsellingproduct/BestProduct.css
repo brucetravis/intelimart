@@ -1,4 +1,4 @@
-.revenue-chart {
+.bestSelling-chart {
     /* background-color: #111827; */
     padding: 20px;
     border-radius: 12px;
@@ -6,18 +6,23 @@
     transition: all 0.3s ease;
 }
 
-.revenue-chart:hover {
+.bestSelling-chart:hover {
     cursor: pointer;
 }
 
-.revenue-chart h4 {
+.bestSelling-chart h4 {
     margin-bottom: 15px;
     font-size: 1rem;
     font-weight: 600;
     color: #111827;   
 }
 
-.revenue-chart svg {
+
+.bestSelling-chart svg,
+.bestSelling-chart svg *:focus,
+.bestSelling-chart:focus {
+    outline: none;
     cursor: pointer;
 }
+
 

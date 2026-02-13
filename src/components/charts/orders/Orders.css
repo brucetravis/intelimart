@@ -1,23 +1,32 @@
-.revenue-chart {
-    /* background-color: #111827; */
+.orders-chart {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
-.revenue-chart:hover {
+
+.orders-chart:hover {
     cursor: pointer;
 }
 
-.revenue-chart h4 {
+
+.orders-chart h4 {
     margin-bottom: 15px;
     font-size: 1rem;
     font-weight: 600;
     color: #111827;   
 }
 
-.revenue-chart svg {
+
+.orders-chart svg,
+.orders-chart svg * {
+    outline: none;
     cursor: pointer;
+}
+
+.orders-chart svg *:focus {
+    outline: none;
+    box-shadow: none
 }
 
