@@ -9,10 +9,11 @@ export default function Dashboard() {
 
     // An array for for the card data
     const kpiCards = [
-        { cardName: 'users-card active', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: '342' },
-        { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' }, 
-        { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: '130' },  
-        { cardName: 'top-product-sold', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Top Product Sold', cardStat: '3' }
+        { cardName: 'top-product-sold active', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Total Sales', cardStat: '3' },
+        { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: '130' },
+        { cardName: 'users-card', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: '342' },
+        { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' },
+        { cardName: 'lowStock-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Low Stock', cardStat: '$10000' }
     ]
 
     // An array for the Sales chart
