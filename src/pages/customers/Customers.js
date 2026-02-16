@@ -42,6 +42,8 @@ export default function Customers() {
         <section
             className='customers-page'
         >
+            <h4>Customers</h4>
+            
             <div
                 className='customer-controls'
             >
