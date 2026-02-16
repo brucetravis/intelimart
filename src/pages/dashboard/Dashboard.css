@@ -45,6 +45,11 @@
     transition: all 0.3s ease;
 }
 
+.dashboard-page .card.active h4,
+.dashboard-page .card.active p {
+    color: #f8fafc;
+}
+
 
 .dashboard-page .card:hover {
     cursor: pointer;
