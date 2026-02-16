@@ -35,6 +35,8 @@ export default function Products() {
     <section
       className='products-page'
     >
+      <h4>Products</h4>
+      
       <div
         className='product-controls'
       >
