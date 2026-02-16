@@ -4,14 +4,12 @@ import { Edit, Mail, MapPin, Phone } from 'lucide-react'
 
 export default function Profile() {
   return (
-    <main
+    <section
         className='profile-page'
     >
         <h4>User Profile</h4>
-
-        <section
-            className='profile-page'
-        >
+        
+        <main>
             <section
                 className='profile-info'
             >
@@ -165,8 +163,8 @@ export default function Profile() {
                     </div>
                 </div>
             </section>
-        </section>
+        </main>
         
-    </main>
+    </section>
   )
 }
