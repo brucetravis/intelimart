@@ -129,6 +129,7 @@ export default function Orders() {
       <section
         className='orders-page'
       >
+        <h4>Orders</h4>
         
         <div
           className='orders-controls'
