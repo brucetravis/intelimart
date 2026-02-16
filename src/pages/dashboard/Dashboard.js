@@ -47,6 +47,7 @@ export default function Dashboard() {
     <section
         className='dashboard-page'
     >
+        <h4>Dashboard</h4>
         <div
             className='dashboard-cards'
         >
