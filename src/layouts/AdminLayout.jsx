@@ -8,11 +8,11 @@ export default function AdminLayout({ children }) {
         <Sidebar />
 
         <div style={{ flex: 1 }}>
-            <Header />
+          <Header />
 
-            <div style={{ padding: '20px' }}>
-                {children}
-            </div>
+          <div style={{ padding: '20px' }}>
+              {children}
+          </div>
         </div>
     </div>
   )
