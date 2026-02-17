@@ -5,9 +5,14 @@ import { Handshake, MessageCircle, Truck } from 'lucide-react'
 import HandCoin from "mdi-react/HandCoinIcon";
 import { products } from '../../data/products/Products';
 import Product from '../../components/cards/product/Product';
+import { useNavigate } from 'react-router';
 
 
 export default function Landing() {
+
+  // function to navigate to another page
+  const navigate = useNavigate()
+
   return (
     <main className='landing-page'>
       <section>
@@ -34,7 +39,10 @@ export default function Landing() {
             </div>
           </div>
           
-          <div className='icon'>
+          <div 
+            className='icon'
+
+          >
             <HandCoin width={24} height={24} className='shake'/>
 
             <div className='icon-text'>
@@ -55,7 +63,10 @@ export default function Landing() {
 
         <div className='grid-cards'>
           {/* LEFT - tall image */}
-          <div className='women-advert big'>
+          <div 
+            className='women-advert big'
+            onClick={() => navigate('/users/shop')}
+          >
             <img 
               src={require('../../images/women-model-removebg-preview.png')}
               alt='women-model'
@@ -72,7 +83,10 @@ export default function Landing() {
           </div>
 
           {/* RIGHT - top left */}
-          <div className='right-column'>
+          <div 
+            className='right-column'
+            onClick={() => navigate('/users/shop')}
+          >
             <div className='top-cards'>
               <div className='women-advert card-one'>
                 <img 
@@ -88,7 +102,10 @@ export default function Landing() {
                 </div>
               </div>
 
-              <div className='women-advert card-two'>
+              <div 
+                className='women-advert card-two'
+                onClick={() => navigate('/users/shop')}
+              >
                 <img 
                   src={require('../../images/watch-model-removebg-preview.png')}
                   alt='bag-model'
@@ -102,7 +119,10 @@ export default function Landing() {
               </div>
             </div>
 
-            <div className='women-advert wide'>
+            <div 
+              className='women-advert wide'
+              onClick={() => navigate('/users/shop')}
+            >
               <div className='advert-text backpack'>
                 <h6>Accessories</h6>
                 <h5>Backpack</h5>
@@ -142,7 +162,10 @@ export default function Landing() {
         </div>
 
         <div className='promo'>
-          <div className='men'>
+          <div 
+            className='men'
+            onClick={() => navigate('/users/shop')}
+          >
             <div className='men-text'>
               <h6>Weekend Sale</h6>
               <h5>Men's Fashion</h5>
@@ -156,7 +179,10 @@ export default function Landing() {
             />
           </div>
 
-          <div className='women'>
+          <div 
+            className='women'
+            onClick={() => navigate('/users/shop')}
+          >
             <div className='women-text'>
               <h6>Fashion Style</h6>
               <h5>Women's Wear</h5>

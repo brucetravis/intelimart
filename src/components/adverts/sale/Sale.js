@@ -1,7 +1,12 @@
 import React from 'react'
 import './Sale.css'
+import { useNavigate } from 'react-router'
 
 export default function Sales() {
+
+    // function to navigate to another page
+    const navigate = useNavigate()
+    
   return (
     <div className='sales-section'>
         <div className='sales-section-one'>
@@ -12,7 +17,12 @@ export default function Sales() {
             </div>
             
             <div className='advert-btn'>
-                <button className='shop'>Shop Now</button>
+                <button 
+                    className='shop'
+                    onClick={() => navigate('/users/shop')}
+                >
+                    Shop Now
+                </button>
                 <button className='read'>Read More</button>
             </div>
         </div>

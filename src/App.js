@@ -11,13 +11,15 @@ import Analytics from './pages/analytics/Analytics';
 import ShopLayout from './layouts/ShopLayout';
 import Register from './pages/register/Register';
 import Landing from './pages/landing/Landing';
+import Shop from './pages/shop/Shop';
+import ProductsDetails from './pages/productdetails/ProductsDetails';
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Navigate to="/users/landing" replace /> } />
 
-      <Route path="/admin/dashboard" element={<AdminLayout><Dashboard /></AdminLayout>} />
+      <Route path="/admin/dashboard"  element={<AdminLayout><Dashboard /></AdminLayout>} />
       <Route path="/admin/products" element={<AdminLayout><Products /></AdminLayout>} />
       <Route path="/admin/orders" element={<AdminLayout><Orders /></AdminLayout>} />
       <Route path="/admin/customers" element={<AdminLayout><Customers /></AdminLayout>} />
@@ -27,6 +29,8 @@ function App() {
 
       <Route path='/register' element={<Register />} />
       <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
+      <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
+      <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
     </Routes>
   );
 }
