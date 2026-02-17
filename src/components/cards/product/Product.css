@@ -1,0 +1,34 @@
+.product-card {
+    padding: 5px;
+    margin-bottom: 5vh;
+    transition: all 0.5s ease
+}
+
+.product-card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    height: 45vh;
+    width: 15vw;
+    object-fit: cover;
+    margin-bottom: 1vh;
+    transition: all 0.3s ease;
+}
+
+.product-card img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.product-card .product-details p {
+    margin: 0
+}
+
+
+.product-card .product-tag p {
+    font-weight: 700
+}
+

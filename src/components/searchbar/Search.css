@@ -1,0 +1,44 @@
+.searchbar {
+    position: fixed;
+    top: 0;
+    height: 40vh;
+    width: 100vw;
+    background-color: rgba(63, 74, 87, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+
+.searchbar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 1001;
+    transition: all 0.3s ease
+}
+
+.searchbar .close-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05)
+}
+
+.searchbar input {
+    outline: none;
+    color: #ffffff;
+    background: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 2px solid #4588dacc;
+}
+
+
+.searchbar input::placeholder {
+    color: white;
+    font-size: 14px
+}
+
+
+
