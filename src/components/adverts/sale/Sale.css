@@ -1,0 +1,76 @@
+.sales-section {
+    background-color: #e5e9ec;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 15vw 20px 15vw;
+}
+
+
+.sales-section .sales-section-one {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sales-section .advert-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.sales-section .advert-text h5 {
+    color: rgb(12, 12, 236);
+    font-size: 35px;
+}
+
+.sales-section .advert-text h4 {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+.sales-section .advert-text p {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+.sales-section .advert-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 3vh;
+}
+
+.sales-section .advert-btn button {
+    color: white;
+    padding: 10px 30px;
+    border-radius: 1px;
+    background-color: rgb(8, 8, 255);
+    transition: all 0.3s ease;
+}
+
+.sales-section .advert-btn .read {
+    color: rgb(8, 8, 255);
+    background: #fff;
+    border: 2px solid rgb(8, 8, 255);
+}
+
+.sales-section .advert-btn .read:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(8, 8, 255);
+}
+
+.sales-section .advert-btn .shop:hover {
+    background-color: rgb(27, 27, 196);
+}
+
+

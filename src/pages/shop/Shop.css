@@ -1,0 +1,311 @@
+.shop-page .values {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px 20px 100px;
+}
+
+.shop-page .values .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.shop-page .values .icon:hover {
+    cursor: pointer;
+    background-color: #e5e9ec;
+}
+
+.shop-page .values .icon .shake {
+    color: rgb(12, 12, 236);
+    height: 5vh;
+    width: 5vw;
+}
+
+.shop-page .values .icon h5 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.shop-page .values .icon p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.shop-page .grid-cards {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+    padding: 20px 100px 20px 100px;
+}
+
+.shop-page .grid-cards.big {
+    min-height: 70vh;
+}
+
+.shop-page .grid-cards .right-column {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 15px;
+}
+
+.shop-page .grid-cards .right-column .top-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.shop-page .grid-cards .women-advert, 
+.shop-page .grid-cards .women-advert.card-one,
+.shop-page .grid-cards .women-advert.card-two {
+    background-color: rgb(237, 240, 245);
+    padding: 20px;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.shop-page .grid-cards .women-advert:hover, 
+.shop-page .grid-cards .women-advert.card-one:hover,
+.shop-page .grid-cards .women-advert.card-two:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.shop-page .grid-cards .women-advert.card-one {
+    background-color: rgb(176, 160, 144);
+}
+
+.shop-page .grid-cards .women-advert.card-one img,
+.shop-page .grid-cards .women-advert.card-two img,
+.shop-page .grid-cards .women-advert.wide img {
+    height: 20vh;
+    width: 10vw;
+    object-fit: cover;
+}
+
+.shop-page .grid-cards .women-advert.wide img {
+    height: 25vh;
+    width: 12vw;
+    object-fit: cover;
+}
+
+
+.shop-page .grid-cards .women-advert.card-two {
+    background-color: rgb(212, 207, 203);
+}
+
+.shop-page .grid-cards .women-advert.wide {
+    background-color: rgb(179, 157, 141);
+}
+
+.shop-page .grid-cards .women-advert .advert-text {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.bag,
+.shop-page .grid-cards .women-advert .advert-text.watch,
+.shop-page .grid-cards .women-advert .advert-text.backpack  {
+    top: 20px;
+    right: 20px;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.backpack {
+    text-align: left;
+}
+
+.shop-page .grid-cards .women-advert .advert-text h6,
+.shop-page .grid-cards .women-advert .advert-text.bag h6,
+.shop-page .grid-cards .women-advert .advert-text.watch h6,
+.shop-page .grid-cards .women-advert .advert-text.backpack h6 {
+    color: rgb(12, 12, 236);
+    font-size: 25px;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.bag h6,
+.shop-page .grid-cards .women-advert .advert-text.watch h6 {
+    font-size: 12px;
+    color: white;
+    background-color: rgb(12, 12, 236);
+    padding: 3px;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.backpack h6 {
+    font-size: 12px;
+    color: white;
+}
+
+.shop-page .grid-cards .women-advert .advert-text h5,
+.shop-page .grid-cards .women-advert .advert-text.bag h5, 
+.shop-page .grid-cards .women-advert .advert-text.watch h5 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.bag h5 {
+    font-size: 25px;
+    color: white;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.watch h5 {
+    font-size: 25px;
+    color: #333;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.backpack h5 {
+    font-size: 35px;
+    color: #fff;
+}
+
+.shop-page .grid-cards .women-advert .advert-text p {
+    font-size: 25px;
+    transition: all 0.3 ease;
+}
+
+
+.shop-page .grid-cards .women-advert .advert-text.bag p {
+    font-size: 14px;
+    color: white;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.watch p {
+    font-size: 14px;
+    color: white;
+}
+
+.shop-page .grid-cards .women-advert .advert-text.backpack p {
+    text-decoration: underline;
+    margin-top: 10vh;
+    font-size: 18px;
+    color: white;
+}
+
+
+.shop-page .grid-cards .women-advert .advert-text.bag p:hover,
+.shop-page .grid-cards .women-advert .advert-text.watch p:hover,
+.shop-page .grid-cards .women-advert .advert-text.backpack p:hover {
+    cursor: pointer;
+    text-decoration: underline
+}
+
+
+.shop-page .grid-cards .women-advert .advert-text button {
+    padding: 10px 30px;
+    border: 2px solid #333;
+    border-radius: 50px;
+    background: none;
+    transition: all 0.3s ease;
+}
+
+.shop-page .grid-cards .women-advert .advert-text button:hover {
+    cursor: pointer;
+    background-color: rgb(51, 51, 51, 0.5);
+}
+
+
+.shop-page .product-titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+
+.shop-page .product-titles h4 {
+    font-size: 18px;
+}
+
+.shop-page .product-titles .product-texts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 3vh;
+}
+
+.shop-page .product-titles .product-texts h5 {
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.shop-page .products {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+    margin-top: 5vh;
+}
+
+
+.shop-page .promo {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+}
+
+.shop-page .promo .women {
+    background-color: rgb(222, 216, 211);
+}
+
+.shop-page .promo .men {
+    background-color: rgb(215, 220, 224);
+}
+
+.shop-page .promo .women,
+.shop-page .promo .men {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.shop-page .promo .women:hover,
+.shop-page .promo .men:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.shop-page .promo .women img {
+    height: 20vh;
+    width: 10vw;
+    object-fit: cover;
+}
+
+.shop-page .promo .men img {
+    height: 25vh;
+    width: 10vw;
+    object-fit: cover;
+}
+
+
+.shop-page .promo .men-text h6,
+.shop-page .promo .women-text h6 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.shop-page .promo h5 {
+    color: #333;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+
+.shop-page .promo span {
+    color: rgb(12, 12, 236);
+    font-size: 20px;
+}
+
