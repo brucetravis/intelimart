@@ -10,6 +10,7 @@ import Settings from './pages/settings/Settings';
 import Analytics from './pages/analytics/Analytics';
 import Shop from './pages/shop/Shop';
 import ShopLayout from './layouts/ShopLayout';
+import Register from './pages/register/Register';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/admin/analytics" element={<AdminLayout><Analytics /></AdminLayout>} />
 
       <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
+      <Route path='/register' element={<Register />} />
     </Routes>
   );
 }
