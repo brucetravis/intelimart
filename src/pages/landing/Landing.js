@@ -1,5 +1,5 @@
 import React from 'react'
-import './Shop.css'
+import './Landing.css'
 import Sales from '../../components/adverts/sale/Sale'
 import { Handshake, MessageCircle, Truck } from 'lucide-react'
 import HandCoin from "mdi-react/HandCoinIcon";
@@ -7,9 +7,9 @@ import { products } from '../../data/products/Products';
 import Product from '../../components/cards/product/Product';
 
 
-export default function Shop() {
+export default function Landing() {
   return (
-    <main className='shop-page'>
+    <main className='landing-page'>
       <section>
         <div>
           <Sales />
