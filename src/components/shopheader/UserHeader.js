@@ -3,14 +3,22 @@ import './UserHeader.css'
 import { Heart, Search, ShoppingBag, User2Icon } from 'lucide-react'
 import Cart from '../cart/Cart'
 import { AnimatePresence } from 'framer-motion'
+import SearchBar from '../searchbar/Search'
 
 export default function UserHeader() {
-    // state to open and close teh cart
+    // state to open and close the cart
     const [ openCart, setOpenCart ] = useState(false) // initially the cart is closed
+    // state to open and close the search bar
+    const [ openSearch, setOpenSearch ] = useState(false) // initially the searchbar is hidden
 
     // function to close the cart
     const closeCart = (prev) => {
         setOpenCart(!prev)
+    }
+
+    // function to close the search bar
+    const closeSearchBar = (prev) => {
+        setOpenSearch(!prev)
     }
 
   return (
@@ -36,6 +44,7 @@ export default function UserHeader() {
                 <Search 
                     size={28} 
                     stroke='#334155'
+                    onClick={() => setOpenSearch(prev => !prev)}
                 />
 
                 <Heart
@@ -53,6 +62,10 @@ export default function UserHeader() {
         
         <AnimatePresence>
             {openCart && <Cart onClose={closeCart} />}
+        </AnimatePresence>
+
+        <AnimatePresence>
+            {openSearch && <SearchBar onClose={closeSearchBar} /> }
         </AnimatePresence>
     </>
   )
