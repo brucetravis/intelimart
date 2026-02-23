@@ -9,6 +9,20 @@
     justify-content: center;
 }
 
+.add-product-modal .product-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.add-product-modal .product-form h6 {
+    font-size: 0.85rem;
+    /* color: var(--muted); */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .add-product-modal .product-form .close-btn {
     position: absolute;
     top: 12px;
@@ -19,14 +33,64 @@
 
 .add-product-modal .product-form .close-btn {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 
 .add-product-modal .product-form {
+    display: flex;
+    align-items: stretch;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     border: 2px solid #2f80ed;
+}
+
+
+.add-product-modal .upload-product-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 3vh;
+}
+
+
+.add-product-modal .upload-product-div .product-input {
+    width: 100%;
+    /* background-color: red; */
+}
+
+.add-product-modal .upload-product-div .product-input input,
+.add-product-modal .upload-product-div .product-input textarea {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.add-product-modal .upload-product-div .product-input input:focus,
+.add-product-modal .upload-product-div .product-input textarea:focus {
+    border: 3px solid #0b6ceb
+}
+
+
+.add-product-modal button {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #006eff;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.add-product-modal button:hover {
+    cursor: pointer;
+    background-color: #1a5bb1;
 }
 
