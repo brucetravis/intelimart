@@ -1,0 +1,76 @@
+.registration-page {
+    display: flex;
+    align-items: center;
+}
+
+.registration-page .column-one {
+    background-color: rgb(12, 12, 236);
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.registration-page .column-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 20px 150px;
+}
+
+.registration-page .column-two form {
+    padding: 20px;
+    /* background-color: red; */
+}
+
+.registration-page .column-two form .names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 5vh;
+}
+
+.registration-page .column-two form .names input {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.registration-page .column-two form .names input:focus,
+.registration-page .column-two form .email input:focus,
+.registration-page .column-two form .passwords input:focus {
+    border: 2px solid rgb(12, 12, 236);
+}
+
+.registration-page .column-two form .email input,
+.registration-page .column-two form .passwords input {
+    width: 100%;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.registration-page .column-two form .email,
+.registration-page .column-two form .passwords > div {
+    margin-bottom: 5vh
+}
+
+
+.registration-page .submit-btn {
+    color: #fff;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgb(12, 12, 236);
+    transition: all 0.3s ease;
+}
+
+.registration-page .submit-btn:hover {
+    cursor: pointer;
+    background-color: rgb(22, 22, 182);
+}
+

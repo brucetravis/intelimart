@@ -6,6 +6,14 @@
 }
 
 
+.dashboard-page h4 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;   
+}
+
+
 .dashboard-page .dashboard-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -37,6 +45,11 @@
     transition: all 0.3s ease;
 }
 
+.dashboard-page .card.active h4,
+.dashboard-page .card.active p {
+    color: #f8fafc;
+}
+
 
 .dashboard-page .card:hover {
     cursor: pointer;
@@ -50,4 +63,3 @@
     grid-template-columns: 1fr 2fr;
     gap: 20px;
 }
-

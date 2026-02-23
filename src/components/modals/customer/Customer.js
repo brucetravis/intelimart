@@ -11,6 +11,7 @@ export default function Customer({ customer, onClick }) {
     <section
         className='customer-modal'
     >
+
         <div
             className='customer-card'
         >

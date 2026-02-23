@@ -1,17 +1,18 @@
-import { Route, Routes } from 'react-router';
-import './App.css';
-import Header from './components/header/Header';
-import Sidebar from './components/sidebar/Sidebar';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router';
+import AdminLayout from './layouts/AdminLayout';
+import Dashboard from './pages/dashboard/Dashboard';
 import Products from './pages/products/Products';
-import Shop from './pages/shop/Shop';
-import Cart from './pages/cart/Cart';
-import Inventory from './pages/inventory/Inventory';
-import Customers from './pages/customers/Customers';
 import Orders from './pages/orders/Orders';
+import Customers from './pages/customers/Customers';
 import Profile from './pages/profile/Profile';
 import Settings from './pages/settings/Settings';
 import Analytics from './pages/analytics/Analytics';
-import Dashboard from './pages/dashboard/Dashboard';
+import ShopLayout from './layouts/ShopLayout';
+import Register from './pages/register/Register';
+import Landing from './pages/landing/Landing';
+import Shop from './pages/shop/Shop';
+import ProductsDetails from './pages/productdetails/ProductsDetails';
 
 function App() {
   
@@ -30,28 +31,22 @@ function App() {
   // ]
 
   return (
-    <div className="App">
-      <Sidebar />
-      <Header />
-      {/* {pages.forEach((page) => {
-        if (page.location === page.path) {
-          (<Header key={page.id} title={page.location} />)
-        }
-      })} */}
+    <Routes>
+      <Route path='/' element={<Navigate to="/users/landing" replace /> } />
 
-      <Routes>
-        <Route path='/shop' element={<Shop />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/orders' element={<Orders />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/settings' element={<Settings />} />
-        <Route path='/customers' element={<Customers />} />
-        <Route path='/inventory' element={<Inventory />} />
-        <Route path='/analytics' element={<Analytics />} />
-        <Route path='/' element={<Dashboard />} />
-      </Routes>
-    </div>
+      <Route path="/admin/dashboard"  element={<AdminLayout><Dashboard /></AdminLayout>} />
+      <Route path="/admin/products" element={<AdminLayout><Products /></AdminLayout>} />
+      <Route path="/admin/orders" element={<AdminLayout><Orders /></AdminLayout>} />
+      <Route path="/admin/customers" element={<AdminLayout><Customers /></AdminLayout>} />
+      <Route path="/admin/profile" element={<AdminLayout><Profile /></AdminLayout>} />
+      <Route path="/admin/settings" element={<AdminLayout><Settings /></AdminLayout>} />
+      <Route path="/admin/analytics" element={<AdminLayout><Analytics /></AdminLayout>} />
+
+      <Route path='/register' element={<Register />} />
+      <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
+      <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
+      <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
+    </Routes>
   );
 }
 

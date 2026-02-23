@@ -1,0 +1,48 @@
+.shopHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100vw;
+    background-color: transparent;
+    background-color: #f1f5f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    z-index: 900
+}
+
+.shopHeader h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #334155;
+    margin: 0;
+}
+
+.shopHeader input {
+    width: 500px;
+    border-radius: 50px;
+    padding: 2px 2px 2px 15px;
+}
+
+.shopHeader .icons {
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+
+.shopHeader .icons svg {
+    transition: all 0.3s ease;
+}
+
+.shopHeader .icons svg:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* .shopHeader .header-info img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+} */

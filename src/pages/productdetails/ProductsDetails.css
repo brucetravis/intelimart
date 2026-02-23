@@ -1,0 +1,29 @@
+.product-details-page {
+    /* padding-top: 15vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px 20px 20px 50px
+}
+
+.product-details-page .left-column img {
+    height: 85vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.product-details-page .left-column,
+.product-details-page .right-column {
+    flex: 1;
+    background-color: red;
+}
+
+
+.product-details-page .right-column {
+    height: 85vh;
+}
+
+
+

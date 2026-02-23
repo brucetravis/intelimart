@@ -27,59 +27,59 @@ export default function Sidebar() {
             >
                 <ul className="top">
                     <li 
-                        className={location.pathname === "/" ? "active" : ""}
-                        onClick={() => navigate("/")}
+                        className={location.pathname === "/admin/dashboard" ? "active" : ""}
+                        onClick={() => navigate("/admin/dashboard")}
                     >
                         <LayoutDashboard size={24} stroke="#4ade80" />
-                        <a href="/dashboard">Dashboard</a>
+                        <a href="/admin/dashboard">Dashboard</a>
                     </li>
 
                     <li 
-                        className={location.pathname === "/orders" ? "active" : ""}
-                        onClick={() => navigate("/orders")}
+                        className={location.pathname === "/admin/orders" ? "active" : ""}
+                        onClick={() => navigate("/admin/orders")}
                     >
                         <Package size={24} stroke="#facc15" />
-                        <a href="/orders">Orders</a>
+                        <a href="/admin/orders">Orders</a>
                     </li>
 
                     <li 
-                        className={location.pathname === "/customers" ? "active" : ""}
-                        onClick={() => navigate("/customers")}
+                        className={location.pathname === "/admin/customers" ? "active" : ""}
+                        onClick={() => navigate("/admin/customers")}
                     >
                         <Users size={24} stroke="#38bdf8" />
-                        <a href="/customers">Customers</a>
+                        <a href="/admin/customers">Customers</a>
                     </li>
 
                     <li 
-                        className={location.pathname === "/analytics" ? "active" : ""}
-                        onClick={() => navigate("/analytics")}
+                        className={location.pathname === "/admin/analytics" ? "active" : ""}
+                        onClick={() => navigate("/admin/analytics")}
                     >
                         <BarChart2 size={24} stroke="#a79bfa" />
-                        <a href='/analytics'>Analytics</a>
+                        <a href='/admin/analytics'>Analytics</a>
                     </li>
 
                     <li 
-                        className={location.pathname === "/products" ? "active" : ""}
-                        onClick={() => navigate("/products")}
+                        className={location.pathname === "/admin/products" ? "active" : ""}
+                        onClick={() => navigate("/admin/products")}
                     >
                         <Box size={24} stroke="#f87171" />
-                        <a href="/products">Products</a>
+                        <a href="/admin/products">Products</a>
                     </li>
 
                     <li 
-                        className={location.pathname === "/settings" ? "active" : ""}
-                        onClick={() => navigate("/settings")}
+                        className={location.pathname === "/admin/settings" ? "active" : ""}
+                        onClick={() => navigate("/admin/settings")}
                     >
                         <Settings size={24} stroke="#9413b8" />
-                        <a href="/settings">Settings</a>
+                        <a href="/admin/settings">Settings</a>
                     </li>
                     
                     <li 
-                        className={location.pathname === "/profile" ? "active" : ""}
-                        onClick={() => navigate("/profile")}
+                        className={location.pathname === "/admin/profile" ? "active" : ""}
+                        onClick={() => navigate("/admin/profile")}
                     >
                         <User size={24} stroke="#f472b6" />
-                        <a href="/profile">Profile</a>
+                        <a href="/admin/profile">Profile</a>
                     </li>
                 </ul>
             </div>

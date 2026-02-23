@@ -3,16 +3,17 @@ import './Dashboard.css'
 import { DollarSign, Package, Tag, Users } from 'lucide-react'
 import Kpi from '../../components/cards/Kpi'
 import Sales from '../../components/charts/sales/Sales'
-import ProductPie from '../../components/charts/products/ProductPie'
+import BestProduct from '../../components/charts/bestsellingproduct/BestProduct'
 
 export default function Dashboard() {
 
     // An array for for the card data
     const kpiCards = [
-        { cardName: 'users-card active', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: '342' },
-        { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' }, 
-        { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: '130' },  
-        { cardName: 'top-product-sold', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Top Product Sold', cardStat: '3' }
+        { cardName: 'top-product-sold active', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Total Sales', cardStat: '3' },
+        { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: '130' },
+        { cardName: 'users-card', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: '342' },
+        { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' },
+        { cardName: 'lowStock-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Low Stock', cardStat: '$10000' }
     ]
 
     // An array for the Sales chart
@@ -31,18 +32,23 @@ export default function Dashboard() {
         { month: 'Dec', sales: 300 }
     ];
 
-    const productRevenueData = [
-        { name: "Product A", revenue: 4000 },
-        { name: "Product B", revenue: 3000 },
-        { name: "Product C", revenue: 2000 },
-        { name: "Product D", revenue: 1000 }
+    const bestSellingProducts = [
+        { name: 'Laptop', sold: 120 },
+        { name: 'Smartphone', sold: 90 },
+        { name: 'Headphones', sold: 60 },
+        { name: 'Smartwatch', sold: 30 }
     ];
+
+    // Array of colors for each slice
+    const COLORS = ['#16a34a', '#facc15', '#3b82f6', '#a79bfa'];
 
 
   return (
     <section
         className='dashboard-page'
     >
+        <h4>Dashboard</h4>
+        
         <div
             className='dashboard-cards'
         >
@@ -60,7 +66,7 @@ export default function Dashboard() {
         <div
             className='dashboard-graphs'
         >
-            <ProductPie data={productRevenueData} />
+            <BestProduct data={bestSellingProducts} colors={COLORS} />
             <Sales data={monthlySalesData} />
         </div>
     </section>
