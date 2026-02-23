@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Products.css'
 import { PlusCircle } from 'lucide-react';
 import Button from '../../components/buttons/Button';
+import Product from '../../components/modals/product/Product';
 
 export default function Products() {
+
+  // state to open the modal to add a product
+  const [ openModal, setOpenModal ] = useState(false) // initially, the modal is closed
 
   const products = [
     { id: 1, image: "https://i.pinimg.com/736x/dc/22/35/dc2235bbb7c5ae968a36e4fd9f3e1941.jpg", name: "iPhone 14 Pro", sku: "IP14P-BLK-128", category: "Smartphones", price: 999, stock: 25, status: "Active", quantity: 25, total: 999 * 25, lastUpdated: "2026-02-10" },
@@ -26,124 +30,136 @@ export default function Products() {
     { id: 4, option: "Store", items: ["Electronics limited", "Tekno technologies", "Micro Teachnologies"] }
   ]
 
+  // function to open and close the modal
+  const openProductModal = () => {
+    setOpenModal(prev => !prev)
+  }
+
   // useEffects for side effects
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   }, [])
 
   return (
-    <section
-      className='products-page'
-    >
-      <h4>Products</h4>
-      
-      <div
-        className='product-controls'
+    <>
+      <section
+        className='products-page'
       >
-        <input
-          type='text'
-          placeholder='Search Samsung, ipad, iphone'
-          className='product-search'
-        />
-
-        <button
-          className='add-product'
+        <h4>Products</h4>
+        
+        <div
+          className='product-controls'
         >
-          <PlusCircle size={15} stroke='#ffffff' />
-          Add Product
-        </button>
-      </div>
+          <input
+            type='text'
+            placeholder='Search Samsung, ipad, iphone'
+            className='product-search'
+          />
 
-      <div
-        className='product-filters'
-      >
-        {filterOptions.map((filter) => (
-          <div
-            className='filter'
-            key={filter.id}
+          <button
+            className='add-product'
+            onClick={openProductModal}
           >
-            <h5>{filter.option}</h5>
+            <PlusCircle size={15} stroke='#ffffff' />
+            Add Product
+          </button>
+        </div>
 
+        <div
+          className='product-filters'
+        >
+          {filterOptions.map((filter) => (
             <div
-              className='filter-input'
+              className='filter'
+              key={filter.id}
             >
-              <span>All</span>
+              <h5>{filter.option}</h5>
 
               <div
-                className='drop-down'
+                className='filter-input'
               >
-                {filter.items.map((item, idx) => (
-                  <div
-                    className='dropdown-item'
-                  >
-                    {typeof item === "string" ? item : Object.keys(item).join(",")}
-                  </div>
-                ))}
+                <span>All</span>
+
+                <div
+                  className='drop-down'
+                >
+                  {filter.items.map((item, idx) => (
+                    <div
+                      className='dropdown-item'
+                    >
+                      {typeof item === "string" ? item : Object.keys(item).join(",")}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
 
-      </div>
+        </div>
 
-      <div
-        className='products-table-wrapper'
-      >
-        <table>
-          <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>SKU</th>
-              <th>Category</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Total Value</th>
-              <th>Stock</th>
-              <th>Status</th>
-              <th>LastUpdated</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td className='product-name'>
-                  <img 
-                    src={product.image}
-                    alt={product.name}
-                    className='product-image'
-                  />
-                  {product.name}
-                </td>
-                <td>{product.sku}</td>
-                <td>{product.category}</td>
-                <td>{product.quantity}</td>
-                <td>{product.price}</td>
-                <td>{product.total}</td>
-                <td>{product.stock}</td>
-                <td
-                  className={
-                    product.status === "Active" ? "status-active" :
-                    product.status === "Out of Stock" ? "status-outofstock" :
-                    "status-disabled"
-                  }
-                >
-                  {product.status}
-                </td>
-                <td>{product.lastUpdated}</td>
-                <td>
-                  <Button name="edit" text="Edit" />
-                  <Button name="update" text="Update" />
-                  <Button name="delete" text="Delete" />
-                </td>
+        <div
+          className='products-table-wrapper'
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>SKU</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Value</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>LastUpdated</th>
+                <th>Actions</th>
               </tr>
-            ))}
-            
-          </tbody>
-        </table>
-      </div>
+            </thead>
 
-    </section>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product.id}>
+                  <td className='product-name'>
+                    <img 
+                      src={product.image}
+                      alt={product.name}
+                      className='product-image'
+                    />
+                    {product.name}
+                  </td>
+                  <td>{product.sku}</td>
+                  <td>{product.category}</td>
+                  <td>{product.quantity}</td>
+                  <td>{product.price}</td>
+                  <td>{product.total}</td>
+                  <td>{product.stock}</td>
+                  <td
+                    className={
+                      product.status === "Active" ? "status-active" :
+                      product.status === "Out of Stock" ? "status-outofstock" :
+                      "status-disabled"
+                    }
+                  >
+                    {product.status}
+                  </td>
+                  <td>{product.lastUpdated}</td>
+                  <td>
+                    <Button name="edit" text="Edit" />
+                    <Button name="update" text="Update" />
+                    <Button name="delete" text="Delete" />
+                  </td>
+                </tr>
+              ))}
+              
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+
+      { openModal && <Product onClose={openProductModal} />}
+
+    </>
   )
 }

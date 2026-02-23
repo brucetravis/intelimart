@@ -1,0 +1,32 @@
+.add-product-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-product-modal .product-form .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.add-product-modal .product-form .close-btn {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.add-product-modal .product-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #2f80ed;
+}
+
