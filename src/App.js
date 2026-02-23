@@ -15,9 +15,7 @@ import Shop from './pages/shop/Shop';
 import ProductsDetails from './pages/productdetails/ProductsDetails';
 
 function App() {
-<<<<<<< HEAD
-=======
-  
+
   // An array of al the pages that we have
   // const pages = [
   //   { id: 1, location: "Dashboard", path: "/dashboard" },
@@ -32,7 +30,6 @@ function App() {
   //   { id: 10, location: "Profile", path: "/profile" }
   // ]
 
->>>>>>> page/products
   return (
     <Routes>
       <Route path='/' element={<Navigate to="/users/landing" replace /> } />
