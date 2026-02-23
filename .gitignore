@@ -11,6 +11,10 @@
 # production
 /build
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> page/products
 .env
 
 # misc
