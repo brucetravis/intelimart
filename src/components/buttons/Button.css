@@ -4,12 +4,12 @@ button.edit {
 }
 
 button.update {
-  background-color: #ebb121;
+  background-color: #0e98e9;
   color: white;
 }
 
 button.update:hover {
-  background-color: #c9991f;
+  background-color: #1e89c7;
 }
 
 button.adjust {
@@ -47,6 +47,7 @@ button.edit:hover {
 button.delete {
   background-color: #eb5757;
   color: white;
+  border: none;
 }
 
 button.delete:hover {

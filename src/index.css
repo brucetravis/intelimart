@@ -13,4 +13,25 @@ code {
     monospace;
 }
 
+.Toastify__toast {
+  background-color: #2967b8;
+  color: #fff;
+  border-radius: 10px
+}
+
+.Toastify__toast--success {
+  border-left: 5px solid #11ff84;
+}
+
+.Toastify__toast--error {
+  border-left: 5px solid #ff4d4d;
+}
+
+.Toastify__toast--info {
+  border-left: 5px solid #2382ff;
+}
+
+.Toastify__progress-bar {
+  border-left: 5px solid #1e293b;
+}
 

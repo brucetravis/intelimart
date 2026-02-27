@@ -4,7 +4,7 @@ import { Heart, Search, ShoppingBag, User2Icon } from 'lucide-react'
 import Cart from '../cart/Cart'
 import { AnimatePresence } from 'framer-motion'
 import SearchBar from '../searchbar/Search'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 
 export default function UserHeader() {
     // state to open and close the cart
@@ -24,6 +24,9 @@ export default function UserHeader() {
 
     // function to Navigate to the registration page
     const navigate = useNavigate()
+
+    // Hook to read the current path
+    const location = useLocation()
 
   return (
     <>
@@ -46,22 +49,30 @@ export default function UserHeader() {
                     onClick={() => navigate('/register')} 
                 />
 
-                <Search 
-                    size={28} 
-                    stroke='#334155'
-                    onClick={() => setOpenSearch(prev => !prev)}
-                />
+                {location.pathname === '/users/shop' ? (
+                    <Search 
+                        size={28} 
+                        stroke='#334155'
+                        onClick={() => setOpenSearch(prev => !prev)}
+                    />
+                ) : (
+                    ''
+                )}
 
-                <Heart
+                {/* <Heart
                     size={28} 
                     stroke='#334155'
-                />
+                /> */}
                 
-                <ShoppingBag 
-                    size={28} 
-                    stroke='#334155'
-                    onClick={() => setOpenCart(prev => !prev)}
-                />
+                {location.pathname === '/users/shop' ? (
+                    <ShoppingBag 
+                        size={28} 
+                        stroke='#334155'
+                        onClick={() => setOpenCart(prev => !prev)}
+                    />
+                ) : (
+                    ''
+                )}
             </div>
         </header>
         

@@ -33,7 +33,12 @@ export default function Customers() {
     // function to open the customer modal
     const openCustomer = (customer) => {
         setSelectedCustomer(customer)
-        setShowCustomer(prev => !prev) // update dynamically
+        setShowCustomer(true) // update dynamically
+    }
+
+    // function to close the modal
+    const closeCustomer = () => {
+        setShowCustomer(false)
     }
 
 
@@ -106,7 +111,7 @@ export default function Customers() {
                             <td>{customer.aiFeatures.join(", ") || "-"}</td> */}
                             <td>{customer.dateJoined}</td>
                             <td>
-                                <Button name="view" text="View" onClick={() => openCustomer(customer)}/>
+                                <Button name="view" text="View" clickFunction={() => openCustomer(customer)}/>
                                 <Button name="block" text="Block" />
                                 <Button name="delete" text="Delete" />
                             </td>
@@ -119,7 +124,7 @@ export default function Customers() {
         {showCustomer && selectedCustomer && (
             <Customer 
                 customer={selectedCustomer} 
-                onClick={openCustomer} 
+                onClick={closeCustomer} 
             />
         )}
     </>

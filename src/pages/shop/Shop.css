@@ -14,3 +14,32 @@
     color: #333;
 }
 
+.shop-page .no-products,
+.shop-page .fetching-products {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+
+/* .shop-page .search-products {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.shop-page input {
+    padding: 8px 12px;
+    margin-top: 5vh;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.shop-page input:focus {
+    border: 3px solid #2f80ed;
+}
+

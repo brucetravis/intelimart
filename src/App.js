@@ -13,6 +13,7 @@ import Register from './pages/register/Register';
 import Landing from './pages/landing/Landing';
 import Shop from './pages/shop/Shop';
 import ProductsDetails from './pages/productdetails/ProductsDetails';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -31,22 +32,35 @@ function App() {
   // ]
 
   return (
-    <Routes>
-      <Route path='/' element={<Navigate to="/users/landing" replace /> } />
+    <>
+      <Routes>
+        <Route path='/' element={<Navigate to="/users/landing" replace /> } />
 
-      <Route path="/admin/dashboard"  element={<AdminLayout><Dashboard /></AdminLayout>} />
-      <Route path="/admin/products" element={<AdminLayout><Products /></AdminLayout>} />
-      <Route path="/admin/orders" element={<AdminLayout><Orders /></AdminLayout>} />
-      <Route path="/admin/customers" element={<AdminLayout><Customers /></AdminLayout>} />
-      <Route path="/admin/profile" element={<AdminLayout><Profile /></AdminLayout>} />
-      <Route path="/admin/settings" element={<AdminLayout><Settings /></AdminLayout>} />
-      <Route path="/admin/analytics" element={<AdminLayout><Analytics /></AdminLayout>} />
+        <Route path="/admin/dashboard"  element={<AdminLayout><Dashboard /></AdminLayout>} />
+        <Route path="/admin/products" element={<AdminLayout><Products /></AdminLayout>} />
+        <Route path="/admin/orders" element={<AdminLayout><Orders /></AdminLayout>} />
+        <Route path="/admin/customers" element={<AdminLayout><Customers /></AdminLayout>} />
+        <Route path="/admin/profile" element={<AdminLayout><Profile /></AdminLayout>} />
+        <Route path="/admin/settings" element={<AdminLayout><Settings /></AdminLayout>} />
+        <Route path="/admin/analytics" element={<AdminLayout><Analytics /></AdminLayout>} />
 
-      <Route path='/register' element={<Register />} />
-      <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
-      <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
-      <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
-    </Routes>
+        <Route path='/register' element={<Register />} />
+        <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
+        <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
+        <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
+      </Routes>
+      
+      
+      <ToastContainer 
+        position='bottom-left'
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnHover
+      />
+    </>
   );
 }
 
