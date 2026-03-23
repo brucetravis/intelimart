@@ -2,8 +2,13 @@ import React from 'react'
 import './Search.css'
 import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import { useSearch } from '../../contexts/SearchProvider'
 
 export default function SearchBar({ onClose }) {
+
+    // import the search context from the search provider
+    const { searchTerm, setSearchTerm } = useSearch()
+    
   return (
     <motion.div
         initial={{ y: "-100%", opacity: 0 }}
@@ -29,7 +34,10 @@ export default function SearchBar({ onClose }) {
                 borderColor: "#85bcff"
             }}
             transition={{ duration: 0.2 }}
-            placeholder='Search bag, shoes, clothes'
+            placeholder='Search, Hoodie, t-shirt, Bakcpack'
+            name='search'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
         />
 
     </motion.div>

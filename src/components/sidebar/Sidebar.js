@@ -1,6 +1,6 @@
 import React from "react"
 import "./Sidebar.css"
-import { BarChart2, Box, LayoutDashboard, Package, Settings, User, Users } from "lucide-react"
+import { BarChart2, Box, LayoutDashboard, Package, Settings, Store, User, Users } from "lucide-react"
 import { useLocation, useNavigate } from "react-router"
 
 export default function Sidebar() {
@@ -64,6 +64,14 @@ export default function Sidebar() {
                     >
                         <Box size={24} stroke="#f87171" />
                         <a href="/admin/products">Products</a>
+                    </li>
+
+                    <li 
+                        className={location.pathname === "/user/shop" ? "active" : ""}
+                        onClick={() => navigate("/users/shop")}
+                    >
+                        <Store size={24} stroke="#a79bfa" />
+                        <a href='/user/shop'>Shop</a>
                     </li>
 
                     <li 

@@ -3,12 +3,14 @@ import './Landing.css'
 import Sales from '../../components/adverts/sale/Sale'
 import { Handshake, MessageCircle, Truck } from 'lucide-react'
 import HandCoin from "mdi-react/HandCoinIcon";
-import { products } from '../../data/products/Products';
-import Product from '../../components/cards/product/Product';
-import { useNavigate } from 'react-router';
-
+import { Link, useNavigate } from 'react-router';
+import ProductCard from '../../components/cards/product/ProductCard';
+import { useProduct } from '../../contexts/ProductProvider'
 
 export default function Landing() {
+
+  // get the available products from the database
+  const { products } = useProduct()
 
   // function to navigate to another page
   const navigate = useNavigate()
@@ -151,13 +153,18 @@ export default function Landing() {
 
         <div className='products'>
           {products.map((product) => (
-            <Product 
+            <Link
               key={product.id}
-              productCategory={product.productCategory} 
-              productName={product.productName} 
-              productPrice={product.productPrice} 
-              productPath={product.productPath}
-            />
+              to={`/users/productdetails/${product._id}`}
+              className='text-dark text-decoration-none'
+            >
+              <ProductCard
+                productCategory={product.category} 
+                productName={product.name.length > 50 ? product.name.substring(0, 50) + '...' : product.name} 
+                productPrice={product.price} 
+                productImage={product.image}
+              />
+            </Link>
           ))}
         </div>
 

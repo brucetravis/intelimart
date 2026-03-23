@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './UserHeader.css'
-import { Heart, Search, ShoppingBag, User2Icon } from 'lucide-react'
+import { Heart, Search, ShieldCheck, ShoppingBag, User2Icon } from 'lucide-react'
 import Cart from '../cart/Cart'
 import { AnimatePresence } from 'framer-motion'
 import SearchBar from '../searchbar/Search'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 
 export default function UserHeader() {
     // state to open and close the cart
@@ -25,6 +25,9 @@ export default function UserHeader() {
     // function to Navigate to the registration page
     const navigate = useNavigate()
 
+    // Hook to read the current path
+    const location = useLocation()
+
   return (
     <>
         <header className='shopHeader'>
@@ -40,28 +43,44 @@ export default function UserHeader() {
             </div> */}
             
             <div className='icons'>
+
+                {location.pathname === '/users/shop' ? (
+                    <Search 
+                        size={28} 
+                        stroke='#334155'
+                        onClick={() => setOpenSearch(prev => !prev)}
+                    />
+                ) : (
+                    ''
+                )}
+
                 <User2Icon 
                     size={28} 
                     stroke='#334155'
                     onClick={() => navigate('/register')} 
                 />
 
-                <Search 
+                {/* <Heart
                     size={28} 
                     stroke='#334155'
-                    onClick={() => setOpenSearch(prev => !prev)}
-                />
+                /> */}
 
-                <Heart
+                <ShieldCheck 
                     size={28} 
                     stroke='#334155'
+                    onClick={() => navigate('/admin/dashboard')} 
                 />
                 
-                <ShoppingBag 
-                    size={28} 
-                    stroke='#334155'
-                    onClick={() => setOpenCart(prev => !prev)}
-                />
+                {location.pathname === '/users/shop' ? (
+                    <ShoppingBag 
+                        size={28} 
+                        stroke='#334155'
+                        onClick={() => setOpenCart(prev => !prev)}
+                    />
+                ) : (
+                    ''
+                )}
+                
             </div>
         </header>
         
