@@ -14,6 +14,7 @@ import Landing from './pages/landing/Landing';
 import Shop from './pages/shop/Shop';
 import ProductsDetails from './pages/productdetails/ProductsDetails';
 import { ToastContainer } from 'react-toastify';
+import Checkout from './pages/checkout/Checkout';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
         <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
         <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
+        <Route path='/users/checkout' element={<ShopLayout><Checkout /></ShopLayout>} />
       </Routes>
       
       

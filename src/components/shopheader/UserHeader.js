@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './UserHeader.css'
-import { Heart, Search, ShoppingBag, User2Icon } from 'lucide-react'
+import { Heart, Search, ShieldCheck, ShoppingBag, User2Icon } from 'lucide-react'
 import Cart from '../cart/Cart'
 import { AnimatePresence } from 'framer-motion'
 import SearchBar from '../searchbar/Search'
@@ -43,11 +43,6 @@ export default function UserHeader() {
             </div> */}
             
             <div className='icons'>
-                <User2Icon 
-                    size={28} 
-                    stroke='#334155'
-                    onClick={() => navigate('/register')} 
-                />
 
                 {location.pathname === '/users/shop' ? (
                     <Search 
@@ -59,10 +54,22 @@ export default function UserHeader() {
                     ''
                 )}
 
+                <User2Icon 
+                    size={28} 
+                    stroke='#334155'
+                    onClick={() => navigate('/register')} 
+                />
+
                 {/* <Heart
                     size={28} 
                     stroke='#334155'
                 /> */}
+
+                <ShieldCheck 
+                    size={28} 
+                    stroke='#334155'
+                    onClick={() => navigate('/admin/dashboard')} 
+                />
                 
                 {location.pathname === '/users/shop' ? (
                     <ShoppingBag 
@@ -73,6 +80,7 @@ export default function UserHeader() {
                 ) : (
                     ''
                 )}
+                
             </div>
         </header>
         

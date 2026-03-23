@@ -76,7 +76,8 @@
 .product-details-page .add-to-cart {
     padding: 14px 30px;
     border-radius: 50px;
-    border: 1px solid #111;
+    border: 1px solid rgb(8, 8, 255);
+    color: rgb(8, 8, 255);
     background: transparent;
     cursor: pointer;
     font-weight: 600;
@@ -84,7 +85,7 @@
 }
 
 .product-details-page .add-to-cart:hover {
-    background: #111;
+    background: rgb(8, 8, 255);
     color: #fff;
 }
 
@@ -92,15 +93,16 @@
     padding: 14px 30px;
     border-radius: 50px;
     border: none;
-    background: #111;
+    background: rgb(8, 8, 255);
     color: #fff;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .product-details-page .buy-now:hover {
-    opacity: 0.85;
+    background: rgb(27, 27, 196);
+    border: none;
 }
 
 /* Not found */
