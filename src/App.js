@@ -17,6 +17,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Navigate to="/users/shop" replace /> } />
 
+      {/* ADMIN */}
       <Route path="/admin/dashboard" element={<AdminLayout><Dashboard /></AdminLayout>} />
       <Route path="/admin/products" element={<AdminLayout><Products /></AdminLayout>} />
       <Route path="/admin/orders" element={<AdminLayout><Orders /></AdminLayout>} />
@@ -25,6 +26,7 @@ function App() {
       <Route path="/admin/settings" element={<AdminLayout><Settings /></AdminLayout>} />
       <Route path="/admin/analytics" element={<AdminLayout><Analytics /></AdminLayout>} />
 
+      {/* USERS */}
       <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
       <Route path='/register' element={<Register />} />
     </Routes>
