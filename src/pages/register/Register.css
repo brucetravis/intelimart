@@ -20,7 +20,27 @@
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: linear-gradient(rgba(53, 52, 52, 0.3), rgba(15, 18, 160, 0.3));
+    background: linear-gradient(rgba(53, 52, 52, 0.3), rgba(15, 18, 160, 0.5));
+}
+
+.registration-page .column-one .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.registration-page .column-one .text h6 {
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+.registration-page .column-one .text p {
+    font-size: 18px;
+    letter-spacing: 3px;
 }
 
 .registration-page .column-two {
@@ -51,7 +71,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 20px rgba(0 ,0 , 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0 ,0 , 0, 0.5);
     padding: 10px;
     transition: all 0.3s ease;
 }
@@ -144,6 +164,7 @@
     font-size: 14px;
     width: 100%;
     padding: 10px 20px;
+    border: none;
     background-color: rgb(43, 43, 209);
     transition: all 0.3s ease;
 }
@@ -151,6 +172,26 @@
 .registration-page .submit-btn:hover {
     cursor: pointer;
     background-color: rgb(22, 22, 182);
+}
+
+.registration-home-btn {
+    padding: 20px 40px;
+    background: none;
+    border-radius: 1px;
+    color: #fff;
+    border: 2px solid rgb(22, 22, 182);
+    font-size: 16px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 3;
+    transition: all 0.3 ease;
+}
+
+.registration-home-btn:hover {
+    background: rgb(22, 22, 182);
+    cursor: pointer;
 }
 
 

@@ -12,6 +12,8 @@ const cors = require('cors')
 
 // import the product routes
 const productRoutes = require('./routes/productRoutes')
+// import the auth routes
+const authRoutes = require('./routes/authRoutes')
 
 app.use(express.json()) // without this line, express will not be able to read the request body for the relevant HTTP methods
 app.use(cors({
@@ -20,6 +22,7 @@ app.use(cors({
 
 // Register the product routes
 app.use('/products', productRoutes) // take every route in productRoutes.js and prefix it with /products
+app.use('/users', authRoutes) // prefic every user route with 'users'
 
 // create a simple root route
 app.get('/', (req, res) => {

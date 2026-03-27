@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './UserHeader.css'
-import { Heart, Search, ShoppingBag, User2Icon } from 'lucide-react'
+import { Search, ShoppingBag, User2Icon, UserCheck2 } from 'lucide-react'
 import Cart from '../cart/Cart'
 import { AnimatePresence } from 'framer-motion'
 import SearchBar from '../searchbar/Search'
 import { useLocation, useNavigate } from 'react-router'
+import { useAuth } from '../../contexts/AuthProvider'
 
 export default function UserHeader() {
     // state to open and close the cart
@@ -28,26 +29,43 @@ export default function UserHeader() {
     // Hook to read the current path
     const location = useLocation()
 
+    // get the token from the local storage
+    // const user = localStorage.getItem('token')
+
+    // get functions from the AuthProvider
+    const { handleLogOut, isLoggedIn, userToken } = useAuth()
+
   return (
     <>
         <header className='shopHeader'>
             <div className='logo'>
                 <h4>INTELIMART</h4>
             </div>
-
-            {/* <div>
-                <input
-                    type='text'
-                    placeholder='Search electronics, clothes etc'   
-                />
-            </div> */}
             
             <div className='icons'>
-                <User2Icon 
-                    size={28} 
-                    stroke='#334155'
-                    onClick={() => navigate('/register')} 
-                />
+                { isLoggedIn || userToken ? (
+                    <div className='logged-in'>
+                        <div className='log-in-icon'>
+                            <UserCheck2 
+                                size={28} 
+                                stroke='#334155'
+                                onClick={() => navigate('/register')} 
+                            />
+                        </div>
+
+                        <button
+                            onClick={handleLogOut}
+                        >
+                            Log Out
+                        </button>
+                    </div>
+                ) : (
+                    <User2Icon 
+                        size={28} 
+                        stroke='#334155'
+                        onClick={() => navigate('/register')} 
+                    />
+                ) }
 
                 {location.pathname === '/users/shop' ? (
                     <Search 

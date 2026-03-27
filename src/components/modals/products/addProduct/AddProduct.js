@@ -53,6 +53,9 @@ export default function AddProduct({ onClose }) {
       // pause while submitting the data
       await addProduct(data)
 
+      // notify the user that they have been successfully logged in
+      toast.success("Product Added Successfully.")
+
       // set the loading state to false meaning stop loading
       setLoading(false)
 

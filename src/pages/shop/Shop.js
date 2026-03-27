@@ -9,10 +9,10 @@ import { useSearch } from '../../contexts/SearchProvider';
 export default function Shop() {
 
   // get the products from the context
-  const { products, loading, setLoading } = useProduct()
+  const { products, loading } = useProduct()
 
   // import the search context from the search provider
-  const { searchTerm, setSearchTerm } = useSearch()
+  const { searchTerm} = useSearch()
 
   // state to filter the products
   const [ filteredProducts, setFilteredProducts ] = useState(products) // initial state is all the filtered products
