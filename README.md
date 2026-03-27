@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+const { MongoClient } = require("mongodb") // Mongo clinet is the object that allows my code to connect, read, write and close connections
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+// store your url inside a string
+const url = "mongodb+srv://BRUCETRAVIS:3SinVrGI6VGqV1Dr@neurora.tlw0aww.mongodb.net/?appName=NEURORA"
 
-## Available Scripts
+// create a new instance of the Mongodb client but now the instance includes your connection string
+const client = new MongoClient(url)
 
-In the project directory, you can run:
 
-### `npm start`
+async function run () {
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    try {
+        await client.connect()
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        // select a database (It will create a database if it does not exist)
+        const database = client.db("Intelimart")
+    } finally {}
+}
 
-### `npm test`
+await pauses execution until MongoDB responds
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+client.connect => opens the connection to my cluster
 
-### `npm run build`
+Until the line above runs successfully, my code above cannot read or write data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// select a database (It will create a database if it does not exist)
+const database = client.db("Intelimart")
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// read documents (empty at first)
+const docs = await collection.find({})
 
-### `npm run eject`
+collection.find({}) - queries MongoDB for documents
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+{} - empty filter -> returns all documents in the collection
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+.toArray() - convert the result
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+docs - variable that now holds all documents
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+// close the connection
+await client.close() => closes the connection to MongoDB
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Never leave the connection open or the ap may run out of resources or locks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+run().catch(console.dir) - calls the run function
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+.catch(console.dir) - if any unhandled errors occur inside run(), they are printed neatly. Ensures your app doesn't crash silently
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

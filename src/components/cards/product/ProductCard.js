@@ -1,14 +1,14 @@
 import React from 'react'
-import './Product.css'
+import './ProductCard.css'
 import { Star } from 'lucide-react'
 
-export default function Product({ productCategory, productName, productPrice, productPath }) {
+export default function ProductCard({ productCategory, productName, productPrice, productImage }) {
   return (
     <div 
         className='product-card'
     >
         <img 
-            src={`${productPath}`}
+            src={`${productImage}`}
             alt={productName}
         />
 
@@ -29,7 +29,7 @@ export default function Product({ productCategory, productName, productPrice, pr
                         />
                     ))}
                 </div>
-                <p>{productPrice}</p>
+                <p>${productPrice}</p>
             </div>
         </div>
     </div>

@@ -25,7 +25,12 @@
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px
+    font-size: 14px;
+    outline: none;
+}
+
+.product-controls .product-search:focus {
+    border: 3px solid #2f80ed;
 }
 
 
@@ -54,6 +59,10 @@
     margin-bottom: 20px;
     justify-content: space-between;
     padding: 2px 8px;
+}
+
+.products-page .no-products {
+    text-align: center;
 }
 
 .product-filters .filter {
