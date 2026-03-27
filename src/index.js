@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router';
 import ProductProvider from './contexts/ProductProvider';
 import SearchProvider from './contexts/SearchProvider';
+import AuthProvider from './contexts/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <BrowserRouter>
       <ProductProvider>
         <SearchProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </SearchProvider>
       </ProductProvider>
     </BrowserRouter>
