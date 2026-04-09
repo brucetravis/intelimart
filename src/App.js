@@ -8,6 +8,7 @@ import Customers from './pages/customers/Customers';
 import Analytics from './pages/analytics/Analytics';
 import EcommerceSettings from './pages/settings/Settings';
 import Profile from './pages/profile/Profile';
+import Products from './pages/products/Products'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/admin/analytics' element={<AdminLayout><Analytics /></AdminLayout>} />
         <Route path='/admin/settings' element={<AdminLayout><EcommerceSettings /></AdminLayout>} />
         <Route path='/admin/profile' element={<AdminLayout><Profile /></AdminLayout>} />
+        <Route path='/admin/products' element={<AdminLayout><Products /></AdminLayout>} />
       </Routes>
       
       <ToastContainer

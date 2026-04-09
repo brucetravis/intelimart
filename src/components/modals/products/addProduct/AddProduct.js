@@ -5,7 +5,6 @@ import { ArrowUp, XCircle } from 'lucide-react'
 // import the add product function
 import addProduct from '../../../../services/products/addProduct'
 import { motion } from 'framer-motion'
-import { toast } from 'react-toastify'
 
 export default function AddProduct({ onClose }) {
 
@@ -95,7 +94,7 @@ export default function AddProduct({ onClose }) {
           onClick={onClose}
         />
 
-        <h4 className='text-center mt-3 mb-4'>UPLOAD PRODUCT</h4>
+        <h4 className='form-title'>UPLOAD PRODUCT</h4>
 
         <div className='upload-product-div'>
           <div className='product-input'>

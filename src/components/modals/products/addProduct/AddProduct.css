@@ -14,13 +14,23 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 450px;
+    gap: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 3px solid #2f80ed;
+}
+
+.add-product-modal .product-form .form-title {
+    text-align: center;
 }
 
 .add-product-modal .product-form h6 {
     font-size: 0.85rem;
-    /* color: var(--muted); */
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin: 0;
 }
 
 .add-product-modal .product-form .close-btn {
@@ -36,29 +46,19 @@
     transform: scale(1.03);
 }
 
-
-.add-product-modal .product-form {
-    display: flex;
-    align-items: stretch;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 3px solid #2f80ed;
-}
-
-
 .add-product-modal .upload-product-div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    margin-bottom: 3vh;
+    width: 100%;
 }
 
-
 .add-product-modal .upload-product-div .product-input {
-    width: 100%;
-    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
 }
 
 .add-product-modal .upload-product-div .product-input input,
@@ -67,14 +67,9 @@
     padding: 5px 10px;
     border-radius: 5px;
     outline: none;
+    width: 100%;
+    box-sizing: border-box
 }
-
-
-.add-product-modal .upload-product-div .product-input input:focus,
-.add-product-modal .upload-product-div .product-input textarea:focus {
-    border: 3px solid #0b6ceb
-}
-
 
 .add-product-modal button {
     width: 100%;
@@ -84,6 +79,7 @@
     justify-content: center;
     font-size: 16px;
     padding: 10px 20px;
+    margin-top: 3vh;
     background-color: #006eff;
     transition: all 0.5s ease-in-out;
 }
@@ -93,4 +89,3 @@
     cursor: pointer;
     background-color: #1a5bb1;
 }
-
