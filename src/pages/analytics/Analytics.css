@@ -1,0 +1,31 @@
+.analytics-page {
+    margin-left: 15vw;
+    padding: 80px 40px 40px;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.analytics-page h4 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;   
+}
+
+.analytics-page .graphs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px;
+    margin-bottom: 3vh;
+}
+
+.analytics-page .graphs > * {
+    flex: 1;
+}
+
+/* Remove black/blue focus outline on all Recharts SVGs */
+.revenue-chart svg:focus,
+.monthly-sales-chart svg:focus {
+  outline: none;
+}

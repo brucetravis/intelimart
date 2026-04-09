@@ -1,0 +1,29 @@
+.low-stock-table {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.low-stock-table h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.low-stock-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.low-stock-table th,
+.low-stock-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.low-stock-table th {
+    font-weight: 600;
+    background: #f1f5f9;
+}

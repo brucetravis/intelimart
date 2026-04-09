@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import Dashboard from './pages/dashboard/Dashboard';
 import Orders from './pages/orders/Orders'
 import Customers from './pages/customers/Customers';
+import Analytics from './pages/analytics/Analytics';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/admin/dashboard' element={<AdminLayout><Dashboard /></AdminLayout>} />
         <Route path='/admin/orders' element={<AdminLayout><Orders /></AdminLayout>} />
         <Route path='/admin/customers' element={<AdminLayout><Customers /></AdminLayout>} />
+        <Route path='/admin/analytics' element={<AdminLayout><Analytics /></AdminLayout>} />
       </Routes>
       
       <ToastContainer

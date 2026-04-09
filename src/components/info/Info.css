@@ -1,0 +1,10 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #1f2937;
+}
+
+.info.highlight strong {
+  color: #2563eb;
+}
