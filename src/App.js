@@ -13,6 +13,7 @@ import Landing from './pages/landing/Landing';
 import ShopLayout from './layouts/ShopLayout'
 import Shop from './pages/shop/Shop';
 import Register from './pages/register/Register';
+import ProductsDetails from './pages/productdetails/ProductsDetails';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
         <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
         <Route path='/register' element={<Register />} />
+        <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
       </Routes>
       
       <ToastContainer
