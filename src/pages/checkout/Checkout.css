@@ -1,0 +1,112 @@
+.checkout-page{
+    padding:60px;
+    background:#f8f9fb;
+}
+
+.checkout-container {
+    display:flex;
+    /* flex-direction: column; */
+    gap:40px;
+}
+
+.checkout-page .active {
+    color: rgb(202, 182, 4);
+    font-weight: 700;
+}
+
+.checkout-left{
+    flex:2;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.checkout-right{
+    flex:1;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    height:fit-content;
+}
+
+.checkout-card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.checkout-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.checkout-form input,
+.card-details input{
+    padding:12px;
+    border:1px solid #e4e4e4;
+    border-radius:6px;
+    outline:none;
+}
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.radio-option{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.card-details{
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.summary-product{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.summary-product img{
+    width:60px;
+    height:60px;
+    border-radius:6px;
+}
+
+.summary-line{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+}
+
+.summary-total{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.pay-btn{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    background: rgb(8, 8, 255, 0.8);
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition: all 0.5s ease;
+}
+
+.pay-btn:hover {
+    background: rgb(8, 8, 255);
+}

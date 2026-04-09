@@ -1,6 +1,7 @@
 import React from 'react'
 import './ProductCard.css'
 import { Star } from 'lucide-react'
+import Button from '../../buttons/Button'
 
 export default function ProductCard({ productCategory, productName, productPrice, productImage }) {
   return (
@@ -32,6 +33,8 @@ export default function ProductCard({ productCategory, productName, productPrice
                 <p>${productPrice}</p>
             </div>
         </div>
+
+        <Button name="add-to-cart" text="Add to Cart" />
     </div>
   )
 }
