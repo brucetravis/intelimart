@@ -1,0 +1,28 @@
+.bestSelling-chart {
+    /* background-color: #111827; */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.bestSelling-chart:hover {
+    cursor: pointer;
+}
+
+.bestSelling-chart h4 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;   
+}
+
+
+.bestSelling-chart svg,
+.bestSelling-chart svg *:focus,
+.bestSelling-chart:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+
