@@ -39,6 +39,9 @@ export default function ProductProvider({ children }) {
 
         } catch (err) {
             console.error(err.response?.data || err.response)
+        } finally {
+            
+            setLoading(false)
         }
     }
 
