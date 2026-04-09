@@ -6,6 +6,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Orders from './pages/orders/Orders'
 import Customers from './pages/customers/Customers';
 import Analytics from './pages/analytics/Analytics';
+import EcommerceSettings from './pages/settings/Settings';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/admin/orders' element={<AdminLayout><Orders /></AdminLayout>} />
         <Route path='/admin/customers' element={<AdminLayout><Customers /></AdminLayout>} />
         <Route path='/admin/analytics' element={<AdminLayout><Analytics /></AdminLayout>} />
+        <Route path='/admin/settings' element={<AdminLayout><EcommerceSettings /></AdminLayout>} />
       </Routes>
       
       <ToastContainer
