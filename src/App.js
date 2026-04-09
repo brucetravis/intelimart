@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AdminLayout from './layouts/AdminLayout';
 import { ToastContainer } from 'react-toastify';
@@ -9,11 +9,15 @@ import Analytics from './pages/analytics/Analytics';
 import EcommerceSettings from './pages/settings/Settings';
 import Profile from './pages/profile/Profile';
 import Products from './pages/products/Products'
+import Landing from './pages/landing/Landing';
+import ShopLayout from './layouts/ShopLayout'
 
 function App() {
   return (
     <>
       <Routes>
+        <Route path='/' element={<Navigate to="/users/landing" replace /> } />
+
         <Route path='/admin/dashboard' element={<AdminLayout><Dashboard /></AdminLayout>} />
         <Route path='/admin/orders' element={<AdminLayout><Orders /></AdminLayout>} />
         <Route path='/admin/customers' element={<AdminLayout><Customers /></AdminLayout>} />
@@ -21,6 +25,9 @@ function App() {
         <Route path='/admin/settings' element={<AdminLayout><EcommerceSettings /></AdminLayout>} />
         <Route path='/admin/profile' element={<AdminLayout><Profile /></AdminLayout>} />
         <Route path='/admin/products' element={<AdminLayout><Products /></AdminLayout>} />
+
+        <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
+      
       </Routes>
       
       <ToastContainer

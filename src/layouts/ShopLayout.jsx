@@ -15,7 +15,7 @@ export default function ShopLayout({ children }) {
         <UserHeader />
       )}
 
-      <div style={{ padding: '20px' }}>
+      <div style={{ padding: '20px', marginTop: '50px' }}>
         {children}
       </div>
     </div>
