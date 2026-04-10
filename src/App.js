@@ -14,7 +14,8 @@ import ShopLayout from './layouts/ShopLayout'
 import Shop from './pages/shop/Shop';
 import Register from './pages/register/Register';
 import ProductsDetails from './pages/productdetails/ProductsDetails';
-import Checkout from './pages/checkout/Checkout';
+import PaymentSuccess from './pages/paymentsuccess/PaymentSuccess';
+
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
         <Route path='/users/landing' element={<ShopLayout><Landing /></ShopLayout>} />
         <Route path='/users/shop' element={<ShopLayout><Shop /></ShopLayout>} />
         <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
-        <Route path='/users/checkout/:id' element={<ShopLayout><Checkout /></ShopLayout>} />
+      
+        <Route path="/users/payment-success" element={<PaymentSuccess />} />
       </Routes>
       
       <ToastContainer

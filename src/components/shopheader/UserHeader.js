@@ -32,7 +32,6 @@ export default function UserHeader() {
     // get functions from the AuthProvider
     const { handleLogOut, isLoggedIn, userGoogleToken, decodedToken } = useAuth()
 
-    const isLanding = location.pathname === '/users/landing'
     const isShop = location.pathname === '/users/shop'
 
     // admin 
@@ -94,15 +93,11 @@ export default function UserHeader() {
                     />
                 )}
                 
-                {!isLanding  ? (
-                    <ShoppingBag 
-                        size={28} 
-                        stroke='#334155'
-                        onClick={() => setOpenCart(prev => !prev)}
-                    />
-                ) : (
-                    ''
-                )}
+                <ShoppingBag 
+                    size={28} 
+                    stroke='#334155'
+                    onClick={() => setOpenCart(prev => !prev)}
+                />
                 
             </div>
         </header>

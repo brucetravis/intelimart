@@ -323,3 +323,8 @@
     font-size: 20px;
 }
 
+.landing-page .products .no-products {
+    width: 100%;
+    text-align: center;
+} 
+

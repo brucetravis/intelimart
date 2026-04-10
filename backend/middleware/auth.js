@@ -13,7 +13,7 @@ const authMiddleware = (req, res, next) => {
         return res.status(400).json({ message: "No token provided" })
     }
 
-    console.log("Authorization header received: ", authorizationHeader)
+    // console.log("Authorization header received: ", authorizationHeader)
 
     // if the header exists
 
@@ -29,7 +29,7 @@ const authMiddleware = (req, res, next) => {
         // verify if the token is valid, has not been tampered with
         const decoded = jwt.verify(token, process.env.JWT_SECRET) // you use our secret key to check if our token is valid
 
-        console.log("Auth Middleware decoded user: ", decoded)
+        // console.log("Auth Middleware decoded user: ", decoded)
 
         // attach the decoded token to the user info
         req.user = decoded

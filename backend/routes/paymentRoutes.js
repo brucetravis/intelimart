@@ -8,11 +8,14 @@ const router = express.Router()
 const authMiddleware = require('../middleware/auth')
 
 // payment controller
-const initPayment = require('../controllers/paymentController')
+const { initPayment, verifyPayment } = require('../controllers/paymentController')
 
 
 // router to create a transaction with paystack
 router.post('/create-payment', authMiddleware, initPayment)
+
+// router to verify a payment
+router.get('/verify-payment/:reference', authMiddleware, verifyPayment)
 
 // export the router
 module.exports = router

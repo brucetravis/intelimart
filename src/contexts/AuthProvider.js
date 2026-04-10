@@ -64,7 +64,7 @@ export default function AuthProvider({ children }) {
             
              // error messages
             const errorMessage = 
-                err.response?.data?.message || // abckend server error
+                err.response?.data?.message || // backend server error
                 err.response || // axios/Network error
                 'Something went wrong'
             
@@ -118,7 +118,7 @@ export default function AuthProvider({ children }) {
 
             // remove teh guest cart
             localStorage.removeItem('guest_cart')
-
+            
             // set the LoggedIn state to true
             setIsLoggedIn(true)
 
@@ -130,6 +130,8 @@ export default function AuthProvider({ children }) {
 
             // toast a user a success message
             toast.success("User Logged In successfully")
+
+            window.location.reload()
 
         } catch(err) {
             console.error("ERROR Submitting the data to the backend for Login: ", err)

@@ -3,14 +3,18 @@ import './ProductsDetails.css'
 import { useParams } from 'react-router'
 import { useProduct } from '../../contexts/ProductProvider'
 import { useCart } from '../../contexts/CartProvider'
+import { usePayment } from '../../contexts/PaymentProvider'
 
-export default function ProductsDetails() {
+export default function ProductsDetails({ total }) {
     // Get the prodcuts from the context
     const { products } = useProduct()
     const { addToCart } = useCart()
 
     const { id } = useParams()
     const product = products?.find((p) => p._id === id)
+
+    // get the payment function from the provider
+    const { payment } = usePayment()
 
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -52,7 +56,12 @@ export default function ProductsDetails() {
                     Add to Cart
                 </button>
 
-                <button className='buy-now'>Buy Now</button>
+                <button 
+                    className='buy-now'
+                    onClick={() => payment(total)}
+                >
+                    Buy Now
+                </button>
             </div>
         </div>
     </section>

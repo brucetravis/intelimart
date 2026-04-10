@@ -59,17 +59,19 @@ export default function Shop() {
           ) : (
             filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
-                <Link
+                <div
                   key={product._id}
-                  to={`/users/productdetails/${product._id}`}
+                  to={``}
                 >
                   <ProductCard
+                    productId={product._id}
                     productCategory={product.category} 
                     productName={product.name} 
                     productPrice={product.price} 
                     productImage={product.image}
+                    productDetails={product}
                   />
-                </Link>
+                </div>
               ))
             ) : (
               <div className='no-products'>

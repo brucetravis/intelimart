@@ -152,20 +152,26 @@ export default function Landing() {
         </div>
 
         <div className='products'>
-          {products?.slice(0, 6).map((product, index) => (
-            <Link
-              key={index}
-              to={`/users/productdetails/${product._id}`}
-              className='text-dark text-decoration-none'
-            >
-              <ProductCard
-                productCategory={product.category} 
-                productName={product.name.length > 50 ? product.name.substring(0, 50) + '...' : product.name} 
-                productPrice={product.price} 
-                productImage={product.image}
-              />
-            </Link>
-          ))}
+          {products?.length > 0 ? (
+            products?.slice(0, 6).map((product, index) => (
+              <Link
+                key={index}
+                to={`/users/productdetails/${product._id}`}
+                className='text-dark text-decoration-none'
+              >
+                <ProductCard
+                  productCategory={product.category} 
+                  productName={product.name.length > 50 ? product.name.substring(0, 50) + '...' : product.name} 
+                  productPrice={product.price} 
+                  productImage={product.image}
+                />
+              </Link>
+            ))
+          ) : (
+            <div className='no-products'>
+              <h6>No Products Available</h6>
+            </div>
+          )}
         </div>
 
         <div className='promo'>

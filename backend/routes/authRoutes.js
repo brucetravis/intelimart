@@ -8,7 +8,7 @@ const router = express.Router()
 const { createUser, logInUser, getAllUsers } = require('../controllers/authController')
 
 // route to get all users
-router.get('/', getAllUsers)
+router.get('/users', getAllUsers)
 
 // route to create a user
 router.post('/register', createUser)
