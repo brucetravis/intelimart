@@ -17,7 +17,7 @@ import ProductsDetails from './pages/productdetails/ProductsDetails';
 import PaymentSuccess from './pages/paymentsuccess/PaymentSuccess';
 import NoPageFound from './pages/notFound/NotFound';
 import { useAuth } from './contexts/AuthProvider';
-import LogIn from './components/modals/login/LogIn';
+import LogIn from './components/modals/login/LogIn'
 
 
 function App() {

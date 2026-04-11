@@ -138,6 +138,7 @@ export default function Cart({ onClose }) {
                             name="checkout-btn"  
                             text="Checkout"
                             clickFunction={() => payment(subTotal)}
+                            disabledStatus={isCartProducts.length > 0 ? false : true}
                         />
                     </div>
                 </div>
