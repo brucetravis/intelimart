@@ -25,8 +25,8 @@ const userSchema = new mongoose.Schema({
     },
 
     password: {
-        type: String, // second name has to be a string
-        required: true // second name cannot be empty
+        type: String, // password has to be a string
+        required: true // password cannot be empty
     },
 
     createdAt: {

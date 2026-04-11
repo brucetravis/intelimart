@@ -6,7 +6,7 @@ export default function Info({label, value, highlight, individual}) {
     const isStatus = label === "Status"
     
     const statusClass = 
-        isStatus && individual ? `status ${individual.status.toLowerCase()}` : ''
+        isStatus && individual ? `status ${individual?.status?.toLowerCase()}` : ''
   
     return (
     <div

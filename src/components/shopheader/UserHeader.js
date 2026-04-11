@@ -41,7 +41,10 @@ export default function UserHeader() {
   return (
     <>
         <header className='shopHeader'>
-            <div className='logo'>
+            <div 
+                className='logo'
+                onClick={() => navigate('/')} // navigate to the landing page
+            >
                 <h4>INTELIMART</h4>
             </div>
             

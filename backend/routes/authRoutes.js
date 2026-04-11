@@ -5,10 +5,7 @@ const express = require('express')
 const router = express.Router()
 
 // export the controller creating the user
-const { createUser, logInUser, getAllUsers } = require('../controllers/authController')
-
-// route to get all users
-router.get('/users', getAllUsers)
+const { createUser, logInUser } = require('../controllers/authController')
 
 // route to create a user
 router.post('/register', createUser)

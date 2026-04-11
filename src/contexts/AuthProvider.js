@@ -27,6 +27,9 @@ export default function AuthProvider({ children }) {
     // state to store the normal user token
     const [ userToken, setUserToken ] = useState(null) // initial state is false
 
+    // state to open the log in Modal
+    const [ isLoginModal, setIsLoginModal ] = useState(false) // initially it is closed
+
     // function to navigate to another page
     const navigate = useNavigate()
 
@@ -42,7 +45,7 @@ export default function AuthProvider({ children }) {
             // console.log("BACKEND DATA: ", userData)
             
             // backend response
-            const response = await axios.post('http://localhost:5000/users/register', userData)
+            const response = await axios.post('http://localhost:5000/auth/register', userData)
 
             loadingFunc(false)
 
@@ -108,7 +111,7 @@ export default function AuthProvider({ children }) {
             loadingFunc(true)
 
             // post the data to the backend in order to log in
-            const response = await axios.post('http://localhost:5000/users/logIn', userData)
+            const response = await axios.post('http://localhost:5000/auth/logIn', userData)
 
             // Get the token from the backend
             const token = response.data.token
@@ -200,14 +203,14 @@ export default function AuthProvider({ children }) {
     // decode the user token to get the
     const decodedToken = token ? jwtDecode(token) : null
 
-    console.log("THIS IS MY DECODED USER TOKEN: ", decodedToken)
+    // console.log("THIS IS MY DECODED USER TOKEN: ", decodedToken)
 
     return(
         <AuthContext.Provider value={{
             handleLogOut, isLoggedIn, setIsLoggedIn, 
             loginUser, registerUser, isLogIn, setIsLogIn,
             signInWithGoogle, userGoogleToken, userToken,
-            decodedToken
+            decodedToken, isLoginModal, setIsLoginModal
         }}>
             {children}
         </AuthContext.Provider>

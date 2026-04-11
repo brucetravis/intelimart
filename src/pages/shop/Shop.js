@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Shop.css'
-import { Link } from 'react-router-dom'
 import Sales from '../../components/adverts/sale/Sale';
 import { useProduct } from '../../contexts/ProductProvider';
 import ProductCard from '../../components/cards/product/ProductCard';
@@ -61,12 +60,12 @@ export default function Shop() {
               filteredProducts.map((product) => (
                 <div
                   key={product._id}
-                  to={``}
+                  className='filtered-products'
                 >
                   <ProductCard
                     productId={product._id}
                     productCategory={product.category} 
-                    productName={product.name} 
+                    productName={product.name.length > 20 ? product.name.substring(0, 100) + "..." : product.name} 
                     productPrice={product.price} 
                     productImage={product.image}
                     productDetails={product}

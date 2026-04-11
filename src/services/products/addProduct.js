@@ -14,6 +14,8 @@ const addProduct = async (productData) => {
 
         // display a message to show success in product addition
         toast.success(res?.data?.message || 'Product successfully added to database.') // display the backend success message after successfully adding the product to the database
+        
+        window.location.reload()
 
     } catch (error) {
         //  log an error incase the product addition to the database fail

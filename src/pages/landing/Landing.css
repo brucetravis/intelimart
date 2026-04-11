@@ -39,16 +39,12 @@
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 10px;
-    padding: 20px 100px 20px 100px;
-}
-
-.landing-page .grid-cards.big {
-    min-height: 70vh;
+    padding: 20px 50px 20px 50px;
 }
 
 .landing-page .grid-cards .right-column {
     display: grid;
-    grid-template-rows: auto 1fr;
+    /* grid-template-rows: auto 1fr; */
     gap: 15px;
 }
 
@@ -131,7 +127,7 @@
 .landing-page .grid-cards .women-advert .advert-text.watch,
 .landing-page .grid-cards .women-advert .advert-text.backpack  {
     top: 20px;
-    right: 0px;
+    right: -15vw;
 }
 
 .landing-page .grid-cards .women-advert .advert-text.backpack {
@@ -255,7 +251,8 @@
 .landing-page .products {
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
+    gap: 10px;
     margin-top: 5vh;
 }
 
@@ -326,5 +323,116 @@
 .landing-page .products .no-products {
     width: 100%;
     text-align: center;
-} 
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .landing-page .values {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px 10px 20px 10px;
+        flex-direction: column;
+    }
+
+    .landing-page .values .icon h5 {
+        font-size: 14px;
+    }
+
+    .landing-page .values .icon p {
+        font-size: 12px;
+    }
+    
+    .landing-page .products {
+        grid-template-columns:1fr;
+        gap: 10px;
+    }
+
+    .landing-page .promo {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-page .promo span {
+        font-size: 16px;
+    }
+
+    .landing-page .promo h5 {
+        font-size: 20px;
+    }
+
+    .landing-page .promo .men-text h6,
+    .landing-page .promo .women-text h6 {
+        font-size: 14px;
+    }
+
+    .landing-page .promo .men img {
+        width: 25vw;
+    }
+
+    .landing-page .promo .women img {
+        width: 18vw;
+    }
+
+    .landing-page .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 20px 5px 20px 5px;
+    }
+
+    .landing-page .grid-cards .women-advert.big {
+        height: 50vh
+    }
+
+    .landing-page .grid-cards .women-advert.big img {
+        width: 50vw;
+        height: 100%;
+    }
+
+    .landing-page .grid-cards .women-advert.big .advert-text p {
+        font-size: 14px;
+    }
+
+    .landing-page .grid-cards .women-advert.big .advert-text h6 {
+        font-size: 14px;
+    }
+
+    .landing-page .grid-cards .women-advert .advert-text button {
+        padding: 5px 20px;
+        border: 2px solid #333;
+        border-radius: 50px;
+        background: none;
+        transition: all 0.3s ease;
+    }
+
+    .landing-page .grid-cards .women-advert .advert-text h5,
+    .landing-page .grid-cards .women-advert .advert-text.bag h5, 
+    .landing-page .grid-cards .women-advert .advert-text.watch h5 {
+        font-size: 20px;
+    }
+
+    .landing-page .grid-cards .women-advert .advert-text.bag h5 {
+        font-size: 14px;
+        color: white;
+    }
+
+    .landing-page .grid-cards .women-advert .advert-text.watch h5 {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .landing-page .grid-cards .women-advert .advert-text.backpack h5 {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .landing-page .grid-cards .women-advert.card-one img,
+    .landing-page .grid-cards .women-advert.card-two img,
+    .landing-page .grid-cards .women-advert.wide img  {
+        width: 20vw;
+        height: 25vh;
+        object-fit: cover;
+    }
+}
 

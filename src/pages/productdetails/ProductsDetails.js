@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductsDetails.css'
 import { useParams } from 'react-router'
 import { useProduct } from '../../contexts/ProductProvider'
@@ -12,6 +12,18 @@ export default function ProductsDetails({ total }) {
 
     const { id } = useParams()
     const product = products?.find((p) => p._id === id)
+
+    const sizes = ["S", "M", "L", "XL", "XXL"]
+
+    const colors = [
+        { id: 1, colorName: "Blue", stroke: "#2563eb" },
+        { id: 2, colorName: "Red", stroke: "#ff2b14" }
+    ]
+
+    // state to track the selected size
+    const [ selectedSize, setSelectedSize ] = useState(null)
+
+    const [ selectedColor, setSelectedColor ] = useState(null)
 
     // get the payment function from the provider
     const { payment } = usePayment()
@@ -38,14 +50,45 @@ export default function ProductsDetails({ total }) {
         <div className='right-column'>
             <span className='product-category'>{product.category}</span>
             <h1 className='product-title'>{product.name}</h1>
-            <p className='product-description'>{product.description}</p>
-            
             <div className='product-price'>
                 <p>PRICE: <span>${product.price}</span></p>
             </div>
+            
+            <p className='product-description'>{product.description}</p>
 
-            <div className='product-quantity'>
-                <p>Quantity: <span>${product.quantity}</span></p>
+            <div className='product-sizes'>
+                <h6 className='m-0'>Size</h6>
+
+                <div className='sizes'>
+                    {sizes.map((s, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setSelectedSize(s)}
+                            className={`size-btn ${ selectedSize === s ? "active" : ""}`}
+                        >
+                            {s}
+                        </button>
+                    ))}
+                </div>
+                
+                <h6 className='m-0'>Color</h6>
+                <div className='colors'>
+                    {colors.map((c) => (
+                        <button
+                            key={c.id}
+                            onClick={() => setSelectedColor(c.id)}
+                            className={`color-btn ${ selectedColor === c.id ? "active" : ""}`}
+                        >
+                            <p 
+                                className={`color-tag m-0`}
+                                style={{
+                                    backgroundColor: `${c.stroke}`
+                                }}
+                            ></p> 
+                            <p className="m-0">{c.colorName}</p>
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <div className='product-actions'>

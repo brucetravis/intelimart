@@ -42,18 +42,18 @@ export default function ViewProduct({ product, onClick }) {
             <div
                 className='grid'
             >   
-                <div>
+                <div className='grid-details'>
                     <h3>Product</h3>
-                    <Info label="Category" value={product.category} />
-                    <Info label="Name" value={product.name} individual={product} />
+                    <Info label="Category: " value={product.category} />
+                    <Info label="Name: " value={product.name} individual={product} />
                     {/* <Info label="Phone" value={product.phone} individual={product} /> */}
-                    <Info label="Status" value={product.status} individual={product} />
+                    <Info label="Status: " value={product.status} individual={product} />
 
-                    <Info label="Quantity" value={product.quantity} />
-                    <Info label="Price" value={`$${product.price}`} />
+                    <Info label="Quantity: " value={product.quantity} />
+                    <Info label="Price: " value={`$${product.price}`} />
 
                     <Info 
-                        label="Total spent"
+                        label="Total spent: "
                         value={`$${product.total.toLocaleString()}`}
                     /> 
                 </div>

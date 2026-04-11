@@ -153,7 +153,7 @@ export default function Landing() {
 
         <div className='products'>
           {products?.length > 0 ? (
-            products?.slice(0, 6).map((product, index) => (
+            products?.slice(0, 4).map((product, index) => (
               <Link
                 key={index}
                 to={`/users/productdetails/${product._id}`}

@@ -106,8 +106,11 @@ const logInUser = async (req, res) => {
         const token = jwt.sign(
             {
                 userId: existingUser._id,
+                firstName: existingUser.firstName,
+                secondName: existingUser.secondName,
                 email: existingUser.email,
-                role: existingUser.role
+                role: existingUser.role,
+                status: existingUser.status
             }, // user payload
             process.env.JWT_SECRET, // secret token to sign our JWT token
             { expiresIn: '1h' }
@@ -127,26 +130,8 @@ const logInUser = async (req, res) => {
     }
 }
 
-// function to query all users
-const getAllUsers = async (req, res) => {
 
-    // try catch block  incase of any errors
-    try {
-        // users
-        const users = await User.find()
-
-        // respond with a success message
-        return res.status(200).json({ 
-            message: 'Users queried successfully.', 
-            users: users 
-        })
-
-    } catch(err) {
-        console.error("ERROR QUERYING USERS: ", err)
-        return res.status(500).json({ message: 'SERVER ERROR' })
-    }
-}
 
 
 // export the function
-module.exports = { createUser, logInUser, getAllUsers }
+module.exports = { createUser, logInUser }

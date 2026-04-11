@@ -82,11 +82,27 @@
 @media screen and (max-width: 768px) {
     .sales-section {
         background-color: #e5e9ec;
-        padding: 100px 100px 20px 100px;
+        padding: 50px 10px 20px 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-direction: column
+    }
+
+    .sales-section img {
+        display: none;
+    }
+
+    .sales-section .advert-text h5 {
+        font-size: 20px;
+    }
+
+    .sales-section .advert-text h4 {
+        font-size: 30px;
+    }
+
+    .sales-section .advert-text p {
+        font-size: 14px;
     }
 }
 

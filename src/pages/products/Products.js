@@ -179,7 +179,7 @@ export default function Products() {
                     <td>{product.sku.length > 15 ? product.sku.substring(0, 15) + '...': product.sku}</td>
                     <td>{product.category}</td>
                     <td>{product.quantity}</td>
-                    <td>{product.price}</td>
+                    <td>{`$${product.price}`}</td>
                     <td>{product.total}</td>
                     <td>{product.quantity}</td>
                     <td

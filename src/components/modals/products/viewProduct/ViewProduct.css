@@ -81,6 +81,13 @@
 .view-product-modal .grid {
     display: flex;
     flex-direction: column;
+    gap: 10px
+}
+
+.view-product-modal .grid .grid-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 

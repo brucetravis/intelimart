@@ -16,6 +16,8 @@ const productRoutes = require('./routes/productRoutes')
 const authRoutes = require('./routes/authRoutes')
 // import the cart routes
 const cartRoutes = require('./routes/cartRoutes')
+// import the users routes
+const usersRoutes = require('./routes/usersRoutes')
 
 // import the payment routes
 const paymentRoutes = require('./routes/paymentRoutes')
@@ -27,9 +29,10 @@ app.use(cors({
 
 // Register the product routes
 app.use('/products', productRoutes) // take every route in productRoutes.js and prefix it with /products
-app.use('/users', authRoutes) // prefix every user route with 'users'
+app.use('/auth', authRoutes) // prefix every user route with 'users'
 app.use('/cart', cartRoutes) // prefix every route with 'cart'
 app.use('/payments', paymentRoutes)
+app.use('/users', usersRoutes)
 
 // create a simple root route
 app.get('/', (req, res) => {

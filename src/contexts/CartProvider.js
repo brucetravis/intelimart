@@ -153,7 +153,7 @@ export default function CartProvider({ children }) {
             const token = localStorage.getItem('token')
             const googleToken = localStorage.getItem('googleToken')
 
-            console.log('FETCH CART MONGO TOKEN: ', token)
+            // console.log('FETCH CART MONGO TOKEN: ', token)
 
             // if the user is logged in
             if (token || userGoogleToken) {

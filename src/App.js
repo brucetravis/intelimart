@@ -15,9 +15,16 @@ import Shop from './pages/shop/Shop';
 import Register from './pages/register/Register';
 import ProductsDetails from './pages/productdetails/ProductsDetails';
 import PaymentSuccess from './pages/paymentsuccess/PaymentSuccess';
+import NoPageFound from './pages/notFound/NotFound';
+import { useAuth } from './contexts/AuthProvider';
+import LogIn from './components/modals/login/LogIn';
 
 
 function App() {
+
+  // get the state to open the login modal from the Authprovider
+  const { isLoginModal } = useAuth()
+
   return (
     <>
       <Routes>
@@ -37,6 +44,8 @@ function App() {
         <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
       
         <Route path="/users/payment-success" element={<PaymentSuccess />} />
+
+        <Route path='*' element={<NoPageFound />} />
       </Routes>
       
       <ToastContainer
@@ -48,6 +57,8 @@ function App() {
         rtl={false}
         pauseOnHover
       />
+
+      {isLoginModal && <LogIn />}
     </>
   );
 }

@@ -65,6 +65,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 .registration-page .alternatives .google, 
@@ -109,9 +110,7 @@
 
 .registration-page form .first-row {
     display: flex;
-    align-items: center;
     gap: 20px;
-    /* justify-content: space-between; */
 }
 
 .registration-page form .second-row {
@@ -200,8 +199,35 @@
         grid-template-columns: 1fr;
     }
 
+    .registration-page form .first-row {
+        flex-direction: column;
+    }
+
     .registration-page .column-one {
         display: none;
+    }
+
+    .registration-page .column-two {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px 20px 10px;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .registration-page .first-row .input-div {
+        gap: 5px
+    }
+
+    .registration-page .alternatives {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .registration-page .column-two form {
+        padding: 20px 10px 20px 10px;
+        gap: 20px;
     }
 }
 

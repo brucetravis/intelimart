@@ -7,7 +7,7 @@ import { useSearch } from '../../contexts/SearchProvider'
 export default function SearchBar({ onClose }) {
 
     // import the search context from the search provider
-    const { searchTerm, setSearchTerm } = useSearch()
+    const { searchTerm, setSearchTerm } = useSearch("")
     
   return (
     <motion.div

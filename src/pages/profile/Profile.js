@@ -1,8 +1,12 @@
 import React from 'react'
 import './Profile.css'
 import { Edit, Mail, MapPin, Phone } from 'lucide-react'
+import { useAuth } from '../../contexts/AuthProvider'
 
 export default function Profile() {
+
+    // get the decoded token from the Auth provider
+    const { decodedToken } = useAuth()
   return (
     <section
         className='profile-page'
@@ -21,7 +25,7 @@ export default function Profile() {
                 <div
                     className='mt-4'
                 >
-                    <h4>JENSEN HUANG</h4>
+                    <h4>{decodedToken?.firstName}</h4>
                 </div>
 
                 <div>
@@ -36,7 +40,7 @@ export default function Profile() {
                         <Mail size={15} stroke="#1cc462" />
                         EMAIL:
                     </span>
-                    <span>jhuang@gmail.com</span>
+                    <span>{decodedToken?.email}</span>
                 </div>
                 
                 <div>
@@ -59,12 +63,12 @@ export default function Profile() {
 
                     <div>
                         <span className='title'>First Name</span>
-                        <span>Jensen</span>
+                        <span>{decodedToken?.firstName}</span>
                     </div>
                     
                     <div>
                         <span className='title'>Last Name</span>
-                        <span>Huang</span>
+                        <span>{decodedToken?.secondName}</span>
                     </div>
 
                     <div>
@@ -144,7 +148,7 @@ export default function Profile() {
                     
                     <div>
                         <span className='title'>Card Holder</span>
-                        <span>Jensen Huang</span>
+                        <span>{decodedToken?.firstName}</span>
                     </div>
 
                     <div>

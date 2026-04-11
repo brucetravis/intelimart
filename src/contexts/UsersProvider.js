@@ -19,6 +19,10 @@ export default function UsersProvider({ children }) {
     // loading state
     const [ loading, setLoading ] = useState(false) // initilally not loading
 
+    // get the user token from localStorage
+    const token = localStorage.getItem('token')
+    const googleToken = localStorage.getItem('googleToken')
+
     // function to ge all the users
     const getUsers = async () => {
 
@@ -27,7 +31,11 @@ export default function UsersProvider({ children }) {
             setLoading(true)
 
             // send a request to the backend
-            const res = await axios.get('http://localhost:5000/users')
+            const res = await axios.get('http://localhost:5000/users', {
+                headers: {
+                    Authorization: `Bearer ${ token || googleToken }`
+                }
+            })
 
             // store the users in state
             setUsers(res.data.users)
@@ -36,7 +44,7 @@ export default function UsersProvider({ children }) {
             setLoading(false)
 
         } catch(err) {
-            console.error("ERROR getting all users.")
+            console.error("ERROR getting all users: ", err)
         
         } finally {
             setLoading(false)

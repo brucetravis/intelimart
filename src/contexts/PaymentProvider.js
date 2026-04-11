@@ -18,7 +18,7 @@ export default function PaymentProvider({ children }) {
     const [ loading, setLoading ] = useState(false) // initial state is fals emeaning not loading
 
     // get the decoded token
-    const { decodedToken } = useAuth()
+    const { decodedToken, isLoginModal, setIsLoginModal } = useAuth()
 
     // get the cart state function
     const { setCartProducts } = useCart()
@@ -26,15 +26,22 @@ export default function PaymentProvider({ children }) {
     // function to make a payment to paystack
     const payment = async (price) => {
 
-        // user data to send to the backend
-        const paymentData = {
-            email: decodedToken.email,
-            amount: price
-        }
-
         // get the token and the google token from loclStorage
         const token = localStorage.getItem('token')
-        const googleToken = localStorage.getItem('googleToken')
+        // const googleToken = localStorage.getItem('googleToken')
+
+        // check if the user is logged in or signed up
+        if (!token) {
+            setIsLoginModal(true) //open the log in modal
+            // exit the function
+            return
+        }
+
+        // user data to send to the backend
+        const paymentData = {
+            email: decodedToken?.email,
+            amount: price
+        }
 
         try {
             // start loading
@@ -46,7 +53,7 @@ export default function PaymentProvider({ children }) {
                 paymentData,
                 {
                     headers: {
-                        Authorization: `Bearer ${ token || googleToken }`
+                        Authorization: `Bearer ${ token }`
                     }
                 }
             )

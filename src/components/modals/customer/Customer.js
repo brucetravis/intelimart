@@ -2,8 +2,12 @@ import React from 'react'
 import './Customer.css'
 import { XCircle } from 'lucide-react'
 import Info from '../../info/Info'
+import { useAuth } from '../../../contexts/AuthProvider'
 
 export default function Customer({ customer, onClick }) {
+    // get the decoded decodedToken from local storage
+    const { decodedToken } = useAuth()
+
     // if there is no customer return null
     if (!customer) return null
 
@@ -26,9 +30,9 @@ export default function Customer({ customer, onClick }) {
                 className='header'
             >
                 <img 
-                    src={customer.img}
-                    alt={customer.name}
-                    className={customer?.status === "Active" ? "borderActive" : "borderInactive" }
+                    src={customer?.img || "https://i.pinimg.com/1200x/cd/4b/d9/cd4bd9b0ea2807611ba3a67c331bff0b.jpg"}
+                    alt={customer?.firstName}
+                    className={decodedToken?.firstName === customer?.firstName ? "borderActive" : "borderInactive" }
                 />
 
                 {/* <h2>{customer.name}</h2> */}
@@ -42,46 +46,13 @@ export default function Customer({ customer, onClick }) {
             >   
                 <div>
                     <h3>Customer</h3>
-                    <Info label="Name" value={customer.name} individual={customer} />
-                    <Info label="Email" value={customer.email} individual={customer} />
-                    <Info label="Phone" value={customer.phone} individual={customer} />
-                    <Info label="Status" value={customer.status} individual={customer} />
+                    <Info label="Name" value={customer?.firstName} individual={customer} />
+                    <Info label="Email" value={customer?.email} individual={customer} />
+                    <Info label="Phone" value={customer?.phone || '+254710000000'} individual={customer} />
+                    <Info label="role" value={customer?.role} individual={customer} />
+                    <Info label="Status" value={decodedToken?.firstName === customer?.firstName ? "active" : "inactive" } individual={customer} />
 
-                    <Info label="Joined" value={new Date(customer.dateJoined).toDateString()} />
-                </div>
-
-                <div>
-                    <h3>Orders</h3>
-                    
-                    <Info label="Orders" value={customer.orders} />
-
-                    <Info 
-                        label="Total spent"
-                        value={`KES ${customer.totalSpent.toLocaleString()}`}
-                    />
-                </div>
-
-
-                <div
-                    className='ai'
-                >
-                    <h3>AI Impact</h3>
-                    
-                    <Info label="Revenue" value={`KES ${customer.aiRevenue}`} />
-                    <Info label="Savings" value={`KES ${customer.aiCostSavings}`} />
-
-
-                    <div className='tags'>
-                        {customer.aiFeatures?.map((f, i) => (
-                            <span 
-                                key={i}
-                                className='tag'
-                            >
-                                {f}
-                            </span>
-                        ))}
-                    </div>
-
+                    <Info label="Joined" value={new Date(customer.createdAt.split(" ")[0]).toDateString()} />
                 </div>
             </div>
         </div>
