@@ -16,12 +16,7 @@
     letter-spacing: 3px;
     color: #334155;
     margin: 0;
-}
-
-.shopHeader input {
-    width: 500px;
-    border-radius: 50px;
-    padding: 2px 2px 2px 15px;
+    cursor: pointer;
 }
 
 .shopHeader .icons {

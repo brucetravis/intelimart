@@ -48,7 +48,16 @@
 }
 
 @media screen and (max-width: 768px) {
+    .about-page {
+        padding: 100px 10px 50px 10px;
+    }
+
     .about-page .about-section-cards {
         grid-template-columns: 1fr;
+    }
+
+    .about-page .about-page-content p {
+        font-size: 14px;
+        line-height: 4vh;
     }
 }
