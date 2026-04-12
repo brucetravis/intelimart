@@ -3,10 +3,16 @@ import { toast } from 'react-toastify'
 
 // Frontend function to send a DELETE request to the database
 const deleteProduct = async (productId) => {
+    // get the token from localstorage
+    const token = localStorage.getItem('token')
 
     try {
         // response from the backend when I make a delete request
-        const res = await axios.delete(`http://localhost:5000/products/${productId}`)
+        const res = await axios.delete(`http://localhost:5000/products/${productId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
         
         // Log the success message to the console
         console.log(res?.data?.message)

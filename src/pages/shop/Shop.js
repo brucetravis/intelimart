@@ -40,7 +40,7 @@ export default function Shop() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   })
 
-  console.log('PRODUCTS IN THE SHOP: ', filteredProducts)
+  // console.log('PRODUCTS IN THE SHOP: ', filteredProducts)
 
   return (
     <section className='shop-page'>

@@ -15,6 +15,8 @@ export default function AddProduct({ onClose }) {
     price: "",
     quantity: "",
     description: "",
+    color: "",
+    shade: "",
     image: null // null instead of "". This is important since we will store a file object and not a string
   }) // initial state are empty strings
 
@@ -65,6 +67,8 @@ export default function AddProduct({ onClose }) {
         price: "",
         quantity: "",
         description: "",
+        color: "",
+        shade: "",
         image: null
       })
 
@@ -99,14 +103,21 @@ export default function AddProduct({ onClose }) {
         <div className='upload-product-div'>
           <div className='product-input'>
             <h6>Category:</h6>
-            <input
-              type='text'
-              placeholder='Hoodies'
+
+            <select
               name='category'
               value={formData.category}
               onChange={handleChange}
               required
-            />
+            >
+              <option value="">Select category</option>
+              <option value="Hoodies">Hoodies</option>
+              <option value="Trousers">Trousers</option>
+              <option value="Dresses">Dresses</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Shirts">Shirts</option>
+              <option value="T-shirts">T-shirts</option>
+            </select>
           </div>
           
           <div className='product-input'>
@@ -116,6 +127,32 @@ export default function AddProduct({ onClose }) {
               placeholder='African Hoodie...'
               name='name'
               value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+        <div className='upload-product-div'>
+          <div className='product-input'>
+            <h6>Color:</h6>
+            <input
+              type='text'
+              placeholder='Red'
+              name='color'
+              value={formData.color}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          
+          <div className='product-input'>
+            <h6>Shade: </h6>
+            <input 
+              type='text'
+              placeholder="#333"
+              name='shade'
+              value={formData.shade}
               onChange={handleChange}
               required
             />

@@ -1,0 +1,54 @@
+.about-page {
+    padding: 100px 50px 50px 50px;
+    background: #f8f8f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-page h4 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 5vh;
+}
+
+.about-page .about-page-content {
+    max-width: 1200px;
+    text-align: center;
+}
+
+.about-page .about-page-content p {
+    font-size: 18px;
+    line-height: 3vh;
+}
+
+.about-page .about-section-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 5vh;
+}
+
+.about-page .shop-nav {
+    padding: 12px 24px;
+    border: 1px solid rgb(8, 8, 255);
+    color: rgb(8, 8, 255);
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 5vh;
+    transition: all 0.3s ease;
+}
+
+.about-page .shop-nav:hover {
+    color: #fff;
+    background: rgb(8, 8, 255);
+}
+
+@media screen and (max-width: 768px) {
+    .about-page .about-section-cards {
+        grid-template-columns: 1fr;
+    }
+}

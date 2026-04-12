@@ -7,18 +7,13 @@ import { usePayment } from '../../contexts/PaymentProvider'
 
 export default function ProductsDetails({ total }) {
     // Get the prodcuts from the context
-    const { products } = useProduct()
+    const { products, count, increaseQuantity, decreaseQuantity } = useProduct()
     const { addToCart } = useCart()
 
     const { id } = useParams()
     const product = products?.find((p) => p._id === id)
 
     const sizes = ["S", "M", "L", "XL", "XXL"]
-
-    const colors = [
-        { id: 1, colorName: "Blue", stroke: "#2563eb" },
-        { id: 2, colorName: "Red", stroke: "#ff2b14" }
-    ]
 
     // state to track the selected size
     const [ selectedSize, setSelectedSize ] = useState(null)
@@ -73,22 +68,33 @@ export default function ProductsDetails({ total }) {
                 
                 <h6 className='m-0'>Color</h6>
                 <div className='colors'>
-                    {colors.map((c) => (
-                        <button
-                            key={c.id}
-                            onClick={() => setSelectedColor(c.id)}
-                            className={`color-btn ${ selectedColor === c.id ? "active" : ""}`}
-                        >
-                            <p 
-                                className={`color-tag m-0`}
-                                style={{
-                                    backgroundColor: `${c.stroke}`
-                                }}
-                            ></p> 
-                            <p className="m-0">{c.colorName}</p>
-                        </button>
-                    ))}
+                    <button
+                        onClick={() => setSelectedColor(product.color)}
+                        className={`color-btn ${ selectedColor === product.color ? "active" : ""}`}
+                    >
+                        <p 
+                            className={`color-tag m-0`}
+                            style={{
+                                backgroundColor: `${product.shade}`
+                            }}
+                        ></p> 
+                        <p className="m-0">{product.color}</p>
+                    </button>
                 </div>
+            </div>
+
+            <div className="quantity-section">
+                <button
+                    onClick={decreaseQuantity}
+                >
+                    -
+                </button>
+                <p>{count}</p>
+                <button
+                    onClick={increaseQuantity}
+                >
+                    +
+                </button>
             </div>
 
             <div className='product-actions'>

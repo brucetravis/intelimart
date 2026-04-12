@@ -17,6 +17,9 @@ export default function ProductProvider({ children }) {
     // loading state to load the products
     const [ loading, setLoading ] = useState(false) // initial state is false meaning not loading
 
+    // state to keep track of the current product quantity
+    const [ count, setCount ] = useState(1) // initial state/ value is 1
+
 
     //  function to fetch products from the database
     const fetchProducts = async () => {
@@ -45,8 +48,16 @@ export default function ProductProvider({ children }) {
         }
     }
 
+    // function to count increase the quantity
+    const increaseQuantity = () => {
+        setCount(prev => prev + 1)
+    }
 
-    
+    // function to count decrease the quantity
+    const decreaseQuantity = () => {
+        // setCount((prev) => Math.max(prev - 1, 1)) // This is another way we can decrease the value
+        setCount((prev) => (prev <= 1 ? 1 : prev - 1))
+    }
 
     // useEffect to fetch all products once when one lands on the page
     useEffect(() => {
@@ -59,7 +70,7 @@ export default function ProductProvider({ children }) {
     return (
         <ProductContext.Provider value={{
             products, setProducts, fetchProducts, 
-            loading, setLoading
+            loading, setLoading, count, setCount, increaseQuantity, decreaseQuantity
         }}>
             { children }
         </ProductContext.Provider>

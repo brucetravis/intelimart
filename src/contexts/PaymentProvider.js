@@ -18,7 +18,7 @@ export default function PaymentProvider({ children }) {
     const [ loading, setLoading ] = useState(false) // initial state is fals emeaning not loading
 
     // get the decoded token
-    const { decodedToken, isLoginModal, setIsLoginModal } = useAuth()
+    const { decodedToken, setIsLoginModal } = useAuth()
 
     // get the cart state function
     const { setCartProducts } = useCart()

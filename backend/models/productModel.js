@@ -8,6 +8,8 @@ const productSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     total: { type: Number, required: true },
     description: { type: String, required: true },
+    color: { type: String, required: true},
+    shade: { type: String, required: true},
     status: { type: String, required: true },
     image: { type: String, required: true } // store cloudinary URL
 }, { timestamps: true}) //automatically adds createdAt and updatedAt

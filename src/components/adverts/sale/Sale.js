@@ -54,7 +54,12 @@ export default function Sales() {
                 >
                     Shop Now
                 </button>
-                <button className='read'>Read More</button>
+                <button 
+                    className='read'
+                    onClick={() => navigate('/users/about')}
+                >
+                    Read More
+                </button>
             </div>
         </div>
 

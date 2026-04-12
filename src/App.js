@@ -18,6 +18,7 @@ import PaymentSuccess from './pages/paymentsuccess/PaymentSuccess';
 import NoPageFound from './pages/notFound/NotFound';
 import { useAuth } from './contexts/AuthProvider';
 import LogIn from './components/modals/login/LogIn'
+import About from './pages/about/About';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path='/users/productdetails/:id' element={<ShopLayout><ProductsDetails /></ShopLayout>} />
       
         <Route path="/users/payment-success" element={<PaymentSuccess />} />
+        <Route path="/users/about" element={<ShopLayout><About /></ShopLayout>} />
 
         <Route path='*' element={<NoPageFound />} />
       </Routes>

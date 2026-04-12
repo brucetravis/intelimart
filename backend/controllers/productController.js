@@ -8,18 +8,22 @@ const { v4: uuidv4 } = require('uuid')
 // function to add a product to the database
 const addProduct = async (req, res) => {
     // get the required data from the request body
-    const { category, name, quantity, price, description } = req.body
+    const { category, name, color, shade, quantity, price, description } = req.body
     const imageFile = req.file // multer stores the file info here
     
+    const quantityNum = Number(quantity)
+    const priceNum = Number(quantity)
+
     // calculate the total
-    const total = Number(price) * Number(quantity)
+    const total = quantityNum * priceNum
+    
     // product status
     const status = 'Active'
     
     console.log(req.body)
 
     //  if any of the data is missing, send a 400 bad request error
-    if (!category || !name || !quantity || !price || !description || !imageFile) {
+    if (!category || !name || !color || !shade || !quantity || !price || !description || !imageFile) {
         //  return a 400 Bad request error
         return res.status(400).json({ message: 'All fields are required.' })
     } else if (Number(price) <= 0 || Number(quantity) <= 0) {
@@ -28,6 +32,22 @@ const addProduct = async (req, res) => {
     } else if (req.file && !req.file.mimetype.startsWith("image/")) {
         return res.status(400).json({ message: "Uploaded file MUST be an image" })
     }
+
+    // check if the product being added already exists in the data base
+    const existingProduct = await Product.findOne({ name })
+
+    // if it exists
+    if (existingProduct) {
+        // exit the function
+        return res.status(409).json({ message: "Product already exists" })
+    }
+
+    // convert the values to lowercase
+    const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase().trim()
+    const normalizedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase().trim()
+    const normalizedColor = color.toLowerCase().trim()
+    const normalizedShade = shade.toLowerCase().trim()
+    const normalizedDescription = description.toLowerCase().trim()
     
     try {
         // upload the image to cloudinary and store it in a folder called products
@@ -38,13 +58,15 @@ const addProduct = async (req, res) => {
 
         // save the product to MongoDB
         const product = await Product.create({
-            category,
-            name,
+            category: normalizedCategory,
+            name: normalizedName,
             sku,
             quantity,
             price,
             total,
-            description,
+            description: normalizedDescription,
+            color: normalizedColor,
+            shade: normalizedShade,
             status,
             image: uploadedImage.secure_url
         })

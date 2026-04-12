@@ -50,7 +50,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
+    margin-bottom: -1vh;
     width: 100%;
 }
 
@@ -61,6 +62,7 @@
     flex: 1;
 }
 
+.add-product-modal .upload-product-div .product-input select,
 .add-product-modal .upload-product-div .product-input input,
 .add-product-modal .upload-product-div .product-input textarea {
     width: 100%;
@@ -68,6 +70,7 @@
     border-radius: 5px;
     outline: none;
     width: 100%;
+    cursor: pointer;;
     box-sizing: border-box
 }
 

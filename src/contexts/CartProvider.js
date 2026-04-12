@@ -164,7 +164,7 @@ export default function CartProvider({ children }) {
                 })
             
                 // log the cart products to the console
-                console.log("Cart Products: ", res.data.cart)
+                // console.log("Cart Products: ", res.data.cart)
 
                 // replace the 'cart' in localStorage with the cart from the db
                 localStorage.setItem('cart', JSON.stringify(res.data.cart))
