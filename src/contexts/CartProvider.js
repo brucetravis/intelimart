@@ -24,6 +24,17 @@ export default function CartProvider({ children }) {
     // import the loading state from the Product context
     const { loading, setLoading } = useProduct()
 
+    const [guestSessionId] = useState(() => {
+        let id = sessionStorage.getItem("guest_session_id")
+
+        if (!id) {
+            id = window.crypto.randomUUID()
+            sessionStorage.setItem("guest_session_id", id)
+        }
+
+        return id
+    })
+
     // function to add a product to cart
     const addToCart = async (product) => {
         try {
@@ -72,7 +83,10 @@ export default function CartProvider({ children }) {
                 const newCart = [...prev, product]
 
                 // store the products in localStorage for persistence
-                localStorage.setItem('guest_cart', JSON.stringify(newCart))
+                sessionStorage.setItem(
+                    `guest_cart_${guestSessionId}`, 
+                    JSON.stringify(newCart)
+                )
 
                 // return the new cart
                 return newCart
@@ -80,8 +94,6 @@ export default function CartProvider({ children }) {
 
             // toast message to notify the user that the product has been added to cart successfully
             toast.success("Product Added to cart Sucessfully.")
-
-            window.location.reload()
 
         } catch(err) {
             console.error("ERROR ADDING PRODUCT TO CART: ", err.message, err.response.data)
@@ -129,7 +141,7 @@ export default function CartProvider({ children }) {
                 const remainingProducts = prev.filter((p) => p._id !== productId)
 
                 // save the remaining products to localStorage
-                localStorage.setItem('guest_cart', JSON.stringify(remainingProducts))
+                sessionStorage.setItem(`guest_cart_${guestSessionId}`, JSON.stringify(remainingProducts))
                 
                 // return the array since filter returns an array
                 return remainingProducts
@@ -181,7 +193,7 @@ export default function CartProvider({ children }) {
                 // fetch the cart from local storage if It is present
             } else {
                 // fetch the localStorage cart
-                const savedCart = localStorage.getItem('guest_cart')
+                const savedCart = sessionStorage.getItem(`guest_cart_${guestSessionId}`)
 
                 // if there is a cart in localStorage parse it, if not, have a default empty array
                 const cart = savedCart ? JSON.parse(savedCart) : []
@@ -205,14 +217,16 @@ export default function CartProvider({ children }) {
             fetchCart() // fetch the cart on mount
         } else {
             // load the saved cart
-            const savedCart = localStorage.getItem('guest_cart')
+            const savedCart = localStorage.getItem(`guest_cart_${guestSessionId}`)
             setIsCartProducts(savedCart ? JSON.parse(savedCart) : [])
         }
         
-    }, [])
+    }, [guestSessionId, token, userGoogleToken])
+
+    console.log("THESE ARE THE CART PRODUCTS: ", isCartProducts)
 
     const subTotal = isCartProducts.reduce((total, p) => {
-                                    return total = total + (p.price * p.quantity)
+                                    return total = total + (p?.price * p?.quantity)
                                 }, 0)
     const shipping = 20
 

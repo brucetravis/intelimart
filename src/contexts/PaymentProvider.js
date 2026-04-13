@@ -76,7 +76,9 @@ export default function PaymentProvider({ children }) {
 
             // clear the cart
             setCartProducts([])
-            
+
+            // remove the users cart
+            localStorage.removeItem('cart')
 
         } catch(err) {
             console.error("Error making a Payment request to the backend: ")

@@ -100,7 +100,10 @@ export default function ProductsDetails({ total }) {
             <div className='product-actions'>
                 <button 
                     className='add-to-cart'
-                    onClick={() => addToCart(product)}
+                    onClick={() => {
+                        if (!product) return
+                        addToCart(product)
+                    }}
                 >
                     Add to Cart
                 </button>

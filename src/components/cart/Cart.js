@@ -81,7 +81,7 @@ export default function Cart({ onClose }) {
                                                     size={25}
                                                     stroke="#b1aeae"
                                                     className='delete-btn'
-                                                    onClick={() => removeCartProduct(p.productId || p._id)}
+                                                    onClick={() => removeCartProduct(p._id)}
                                                 />
                                             </td>
                                         </tr>

@@ -42,7 +42,10 @@ export default function ProductCard({ productCategory, productName, productPrice
                 <Button 
                     name="add-to-cart" 
                     text="Add to Cart"
-                    clickFunction={() => addToCart(product)}
+                    clickFunction={() => {
+                        if (!product) return
+                        addToCart(product)
+                    }}
                 />
                 
                 <EyeIcon 
