@@ -172,6 +172,12 @@
     display: inline-block;
 }
 
+.products-page .table-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .products-page .status-outofstock {
     background-color: #fdc9c3;
     color: #e22b16;

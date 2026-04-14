@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useAuth } from "./AuthProvider";
 
 const { createContext, useContext, useState, useEffect } = require("react");
 
@@ -20,7 +22,6 @@ export default function ProductProvider({ children }) {
     // state to keep track of the current product quantity
     const [ count, setCount ] = useState(1) // initial state/ value is 1
 
-
     //  function to fetch products from the database
     const fetchProducts = async () => {
         //  try catch block to catch possible errors
@@ -39,6 +40,7 @@ export default function ProductProvider({ children }) {
 
             // setLoading to false
             setLoading(false)
+            
 
         } catch (err) {
             console.error(err.response?.data || err.response)
@@ -70,7 +72,8 @@ export default function ProductProvider({ children }) {
     return (
         <ProductContext.Provider value={{
             products, setProducts, fetchProducts, 
-            loading, setLoading, count, setCount, increaseQuantity, decreaseQuantity
+            loading, setLoading, count, setCount, 
+            increaseQuantity, decreaseQuantity
         }}>
             { children }
         </ProductContext.Provider>

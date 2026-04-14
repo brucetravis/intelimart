@@ -174,9 +174,9 @@ export default function Products() {
                         alt={product.name}
                         className='product-image'
                       />
-                      {product.name.length > 20 ? product.name.substring(0, 20) + '...' : product.name}
+                      {product.name.length > 20 ? product.name.substring(0, 10) + '...' : product.name}
                     </td>
-                    <td>{product.sku.length > 15 ? product.sku.substring(0, 15) + '...': product.sku}</td>
+                    <td>{product.sku.length > 15 ? product.sku.substring(0, 10) + '...': product.sku}</td>
                     <td>{product.category}</td>
                     <td>{product.quantity}</td>
                     <td>{`$${product.price}`}</td>
@@ -197,7 +197,7 @@ export default function Products() {
                         : new Date(product.updatedAt).toLocaleString()
                       }
                     </td>
-                    <td>
+                    <td className='table-actions'>
                       <Button 
                         name="view" 
                         text="View"

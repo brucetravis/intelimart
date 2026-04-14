@@ -128,7 +128,7 @@ export default function CartProvider({ children }) {
                 setIsCartProducts(updatedCart)
 
                 //  success message informing the user that he product has been successfully from cart
-                toast.success("Product removed from cart Successfully")
+                toast.success(res.data.message)
 
                 // exit the function
                 return

@@ -9,6 +9,7 @@ import SearchProvider from './contexts/SearchProvider'
 import CartProvider from './contexts/CartProvider';
 import UsersProvider from './contexts/UsersProvider';
 import PaymentProvider from './contexts/PaymentProvider';
+import OrdersProvider from './contexts/OrdersProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +21,9 @@ root.render(
             <CartProvider>
               <UsersProvider>
                 <PaymentProvider>
-                  <App />
+                  <OrdersProvider>
+                    <App />
+                  </OrdersProvider>
                 </PaymentProvider>
               </UsersProvider>
             </CartProvider>

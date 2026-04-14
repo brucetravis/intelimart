@@ -18,6 +18,8 @@ const authRoutes = require('./routes/authRoutes')
 const cartRoutes = require('./routes/cartRoutes')
 // import the users routes
 const usersRoutes = require('./routes/usersRoutes')
+// import the orders routes
+const ordersRoutes = require('./routes/ordersRoutes')
 
 // import the payment routes
 const paymentRoutes = require('./routes/paymentRoutes')
@@ -33,6 +35,7 @@ app.use('/auth', authRoutes) // prefix every user route with 'users'
 app.use('/cart', cartRoutes) // prefix every route with 'cart'
 app.use('/payments', paymentRoutes)
 app.use('/users', usersRoutes)
+app.use('/orders', ordersRoutes)
 
 // create a simple root route
 app.get('/', (req, res) => {

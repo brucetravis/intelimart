@@ -63,6 +63,19 @@
     overflow: hidden;
 }
 
+.orders-page tbody .order-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.orders-page .order-image {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50px
+}
+
 
 .orders-page table th {
     background-color: #bbc7ec;
@@ -109,6 +122,10 @@
     color: #333333;
     border-bottom: 1px solid #e0e0e0;
     transition: all 0.3s ease;
+}
+
+.orders-page .no-orders {
+    text-align: center;
 }
 
 /* STATUS */

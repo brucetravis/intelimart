@@ -80,6 +80,11 @@ export default function Profile() {
                         <span className='title'>Gender</span>
                         <span>Male</span>
                     </div>
+
+                    <div>
+                        <span className='title'>Date Created</span>
+                        <span>10 June 1990</span>
+                    </div>
                 </div>
 
                 <div

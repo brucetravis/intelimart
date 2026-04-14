@@ -136,7 +136,7 @@ export default function Customers() {
                                     {decodedToken?.firstName === user.firstName ? "active" : "inactive"}
                                 </td>
                                 <td>{user.createdAt.split("T")[0]}</td>
-                                <td>
+                                <td className='user-actions'>
                                     <Button name="view" text="View" clickFunction={() => openCustomer(user)}/>
                                     <Button name="delete" text="Delete" />
                                 </td>

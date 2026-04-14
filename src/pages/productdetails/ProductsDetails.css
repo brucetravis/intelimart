@@ -58,10 +58,11 @@
     font-size: 16px;
     color: #555;
     line-height: 1.8;
+    margin: 0;
 }
 
 .product-details-page .product-price {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     color: #111;
     letter-spacing: 2px;
@@ -83,9 +84,13 @@
 }
 
 .product-details-page .add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     padding: 10px 20px;
-    border: 1px solid rgb(8, 8, 255);
-    color: rgb(8, 8, 255);
+    border: 1px solid rgba(8, 8, 255);
+    color: rgba(8, 8, 255);
     background: transparent;
     cursor: pointer;
     font-weight: 600;
@@ -93,11 +98,40 @@
 }
 
 .product-details-page .add-to-cart:hover {
-    background: rgb(8, 8, 255);
+    background: rgba(8, 8, 255);
+    color: #fff;
+    border: none;
+}
+
+.product-details-page .order-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border: 1px solid rgba(8, 8, 255);
+    color: rgba(8, 8, 255);
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.product-details-page .order-btn:hover {
+    background: rgba(8, 8, 255);
+    color: #fff;
+    border: none;
+}
+
+.product-details-page .order-btn:hover svg {
     color: #fff;
 }
 
 .product-details-page .buy-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     padding: 10px 20px;
     border: none;
     background: rgb(8, 8, 255);
@@ -108,7 +142,8 @@
 }
 
 .product-details-page .buy-now:hover {
-    background: rgb(27, 27, 196);
+    background: rgba(27, 27, 196);
+    color: #fff;
     border: none;
 }
 
@@ -121,7 +156,7 @@
 
 .product-details-page .product-sizes {
     border-radius: 5px;
-    border: 2px solid rgb(51, 51, 51, 0.5);;
+    border: 2px solid rgba(51, 51, 51, 0.5);;
     padding: 20px;
     box-shadow:0 6px 18px rgba(0, 0, 0, 0.08);
     display: flex;
@@ -179,7 +214,22 @@
     border-color: #2563eb;
 }
 
+
 .product-details-page .quantity-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-details-page .quantity-section h6 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.product-details-page .quantity-section > div {
     display: flex;
     align-items: center;
     width: fit-content;

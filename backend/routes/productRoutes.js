@@ -7,7 +7,7 @@ const router = express.Router()
 // import the upload middleware
 const upload = require('../middleware/upload')
 
-// import the controller to add the product
+// import the product controllers
 const { addProduct, fetchProducts, deleteProduct, updateProduct } = require('../controllers/productController')
 
 // import the auth Middleware

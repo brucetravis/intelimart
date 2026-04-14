@@ -27,14 +27,14 @@ const addToCart = async (req, res) => {
 
         // if the cart exists
         if (cart) {
-            // check if the product already exists in the Items
+            // check if the product already exists in their cart
             const productIndex = cart.items.findIndex(item => item.productId.toString() === _id)
 
             //  if the product exists
             if (productIndex >= 0) {
                 // increase the quantity of the product
                 // cart.items[productIndex].quantity += quantity
-                return res.status(400).json("Product exists in cart.")
+                return res.status(409).json("Product exists in cart.")
                 
                 // if the product does not exist
             } else {
@@ -102,6 +102,16 @@ const removeProduct = async (req, res) => {
                 message: "Cart is empty",
                 cart: []
             })
+        }
+
+        // check if the product exists in the cart before removing it
+        const productExists = cart.items.some(item => item.productId.toString() === id)
+
+
+        // if the product does not exist
+        if (!productExists) {
+            // send a 404 (resource not found)
+            return res.status(404).json({ message: "Product Not Found In Cart."})
         }
 
         // remove the product from the cart

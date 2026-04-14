@@ -1,7 +1,7 @@
 import React from 'react'
 import './ProductCard.css'
 import Button from '../../buttons/Button'
-import { EyeIcon } from 'lucide-react'
+import { EyeIcon, ShoppingCart } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../../contexts/CartProvider'
 import { useProduct } from '../../../contexts/ProductProvider'
@@ -23,6 +23,8 @@ export default function ProductCard({ productCategory, productName, productPrice
 
     const product = products?.find((p) => p._id === productId)
 
+    const Icon = <ShoppingCart size={20} stroke='currentColor' />
+
   return (
     <div className="product-card">
 
@@ -42,6 +44,7 @@ export default function ProductCard({ productCategory, productName, productPrice
                 <Button 
                     name="add-to-cart" 
                     text="Add to Cart"
+                    buttonIcon={Icon}
                     clickFunction={() => {
                         if (!product) return
                         addToCart(product)

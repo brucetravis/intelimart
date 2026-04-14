@@ -82,6 +82,12 @@
     cursor: pointer;
 }
 
+.customers-page table .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 
 .customers-page table .status-active {
     background-color: #bff8d7;

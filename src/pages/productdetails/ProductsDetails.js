@@ -4,11 +4,16 @@ import { useParams } from 'react-router'
 import { useProduct } from '../../contexts/ProductProvider'
 import { useCart } from '../../contexts/CartProvider'
 import { usePayment } from '../../contexts/PaymentProvider'
+import { Package, ShoppingCart, Zap } from 'lucide-react'
+import { useOrders } from '../../contexts/OrdersProvider'
 
 export default function ProductsDetails({ total }) {
     // Get the prodcuts from the context
     const { products, count, increaseQuantity, decreaseQuantity } = useProduct()
     const { addToCart } = useCart()
+    
+    // get the function to order products
+    const { orderProduct } = useOrders()
 
     const { id } = useParams()
     const product = products?.find((p) => p._id === id)
@@ -83,21 +88,39 @@ export default function ProductsDetails({ total }) {
                 </div>
             </div>
 
-            <div className="quantity-section">
-                <button
-                    onClick={decreaseQuantity}
-                >
-                    -
-                </button>
-                <p>{count}</p>
-                <button
-                    onClick={increaseQuantity}
-                >
-                    +
-                </button>
+            <div className='quantity-section'>
+                <h6>Quantity: </h6>
+
+                <div>
+                    <button
+                        onClick={decreaseQuantity}
+                    >
+                        -
+                    </button>
+                    <p>{count}</p>
+                    <button
+                        onClick={increaseQuantity}
+                    >
+                        +
+                    </button>
+                </div>
             </div>
 
             <div className='product-actions'>
+                <button 
+                    className='order-btn'
+                    onClick={() => {
+                        if (!product) return
+                        orderProduct(product)
+                    }}
+                >
+                    <Package
+                        size={20} 
+                        stroke='currentColor'
+                    />
+                    Order
+                </button>
+
                 <button 
                     className='add-to-cart'
                     onClick={() => {
@@ -105,6 +128,10 @@ export default function ProductsDetails({ total }) {
                         addToCart(product)
                     }}
                 >
+                    <ShoppingCart
+                        size={20} 
+                        stroke='currentColor'
+                    />
                     Add to Cart
                 </button>
 
@@ -112,6 +139,11 @@ export default function ProductsDetails({ total }) {
                     className='buy-now'
                     onClick={() => payment(total)}
                 >
+                    <Zap 
+                        size={20} 
+                        stroke="currentColor" 
+                    />
+
                     Buy Now
                 </button>
             </div>

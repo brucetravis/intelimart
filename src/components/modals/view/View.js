@@ -21,7 +21,7 @@ export default function View({ order, onClick }) {
                 onClick={onClick}
             />
 
-            <h4 className='text-center'>{order.orderId}</h4>
+            <h4 className='text-center'>{order.OrderId}</h4>
 
             <div 
                 className='view-section'
@@ -31,17 +31,17 @@ export default function View({ order, onClick }) {
                 <div className="info-group">
                     <div>
                         <span className="label">Order ID</span>
-                        <span>{order.orderId}</span>
+                        <span>{order.items?.OrderId}</span>
                     </div>
 
                     <div>
                         <span className="label">Date</span>
-                        <span>{order.date}</span>
+                        <span>{order.items?.updatedAt}</span>
                     </div>
 
                     <div>
                         <span className="label">Status</span>
-                        <span>{order.status}</span>
+                        <span>{order?.status}</span>
                     </div>
                 </div>
             
@@ -67,16 +67,20 @@ export default function View({ order, onClick }) {
                 <h3>Items</h3>
 
                 <div className="items-list">
-                    {order.items.map((item) => (
-                        <div 
-                            key={item.id}
-                            className="item"
-                        >
-                            <span>{item.productName}</span>
-                            <span>{item.quantity}</span>
-                            <span>KES {item.price}</span>
-                        </div>
-                    ))}
+                    {order.map((item) => {
+                        const items = item.items
+
+                        return (
+                            <div 
+                                key={items?.id}
+                                className="item"
+                            >
+                                <span>{items?.name}</span>
+                                <span>{items?.quantity}</span>
+                                <span>KES {items?.price}</span>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
 

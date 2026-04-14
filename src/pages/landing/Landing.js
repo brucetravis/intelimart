@@ -154,18 +154,18 @@ export default function Landing() {
         <div className='products'>
           {products?.length > 0 ? (
             products?.slice(0, 4).map((product, index) => (
-              <Link
+              <div
                 key={index}
-                to={`/users/productdetails/${product._id}`}
-                className='text-dark text-decoration-none'
               >
                 <ProductCard
+                  productId={product._id}
                   productCategory={product.category} 
-                  productName={product.name.length > 50 ? product.name.substring(0, 50) + '...' : product.name} 
+                  productName={product.name.length > 20 ? product.name.substring(0, 100) + "..." : product.name} 
                   productPrice={product.price} 
                   productImage={product.image}
+                  productDetails={product}
                 />
-              </Link>
+              </div>
             ))
           ) : (
             <div className='no-products'>

@@ -6,6 +6,7 @@ import Sales from '../../components/charts/sales/Sales'
 import BestProduct from '../../components/charts/bestsellingproduct/BestProduct'
 import { useUsers } from '../../contexts/UsersProvider'
 import { useProduct } from '../../contexts/ProductProvider'
+import { useOrders } from '../../contexts/OrdersProvider'
 
 export default function Dashboard() {
 
@@ -14,6 +15,9 @@ export default function Dashboard() {
 
     // get all the products from the product provider
     const { products } = useProduct()
+
+    // get all orders fro the orders provider
+    const { orders } = useOrders()
     
     // total of all products
     const productsTotal = products.reduce((acc, product) => {
@@ -23,10 +27,10 @@ export default function Dashboard() {
     // An array for for the card data
     const kpiCards = [
         { cardName: 'users-card active', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: users?.length },
-        { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: '130' },
+        { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: orders?.length },
         { cardName: 'top-product-sold', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Total Sales', cardStat: '3' },
         { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' },
-        { cardName: 'lowStock-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Stock', cardStat: `$${productsTotal}` }
+        { cardName: 'lowStock-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Stock', cardStat: `$${productsTotal.toFixed(2)}` }
     ]
 
     // An array for the Sales chart
