@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 })
 
 // The port we will be using to listen for incoming requests
-const PORT = process.env.REACT_APP_API_URL|| 5000 // get the default PORT set in the environment variables, otherwise set the PORT to 5000
+const PORT = process.env.PORT|| 5000 // get the default PORT set in the environment variables, otherwise set the PORT to 5000
 
 // listen for any incoming requests in the specified port
 app.listen(PORT, () => {
