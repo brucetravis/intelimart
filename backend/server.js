@@ -24,10 +24,6 @@ const ordersRoutes = require('./routes/ordersRoutes')
 // import the payment routes
 const paymentRoutes = require('./routes/paymentRoutes')
 
-const behaviorRoutes = require("./routes/behaviorRoutes")
-
-const recommendationRoutes = require("./routes/recommendationRoutes")
-
 app.use(express.json()) // without this line, express will not be able to read the request body for the relevant HTTP methods
 app.use(cors({
     origin: 'http://localhost:3000' // restrict cors to a specific origin
@@ -41,8 +37,6 @@ app.use('/payments', paymentRoutes)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
 app.use('/orders', ordersRoutes)
-app.use("/behavior", behaviorRoutes)
-app.use("/recommendations", recommendationRoutes)
 
 // create a simple root route
 app.get('/', (req, res) => {
