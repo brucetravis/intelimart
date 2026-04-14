@@ -1,0 +1,76 @@
+.card-icon {
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.revenue-card .card-icon {
+    background-color: #68e79733;
+    color: #16a34a;
+    transition: all 0.3s ease;
+}
+
+.revenue-card .card-icon:hover {
+    background-color: #16a34a33;
+    color: #0dca52;
+    transition: all 0.3s ease;
+}
+
+.orders-card .card-icon {
+    background-color: #facc1533;
+    color: #facc15;
+    transition: all 0.3s ease;
+}
+
+.orders-card .card-icon:hover {
+    background-color: #a1851133;
+    color: #ffcf0e;
+}
+
+
+.users-card .card-icon {
+    background-color: #3b82f633;
+    color: #3b82f6;
+    transition: all 0.3s ease;
+}
+
+.users-card .card-icon:hover {
+    background-color: #224f9733;
+    color: #669ffa;
+}
+
+
+.top-product-sold .card-icon {
+    background-color: #a79bfa33;
+    color: #a79bfa;
+    transition: all 0.3s ease;
+}
+
+
+.top-product-sold .card-icon:hover {
+    background-color: #8474ee33;
+    color: #b2a7fa;
+}
+
+
+.card-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-info p {
+    margin: 5px 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+

@@ -1,0 +1,20 @@
+.monthly-sales-chart {
+  background-color: #f8fafc; /* light neutral canvas */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.monthly-sales-chart h4 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.monthly-sales-chart svg,
+.monthly-sales-chart svg:focus,
+.monthly-sales-chart svg *:focus {
+  cursor: pointer;
+  outline: none;
+}

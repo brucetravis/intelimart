@@ -1,0 +1,140 @@
+.view-modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999999;
+}
+
+.view-modal .view-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+.view-modal .view-card .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    z-index: 2;
+    transition: all 0.5s ease
+}
+
+.view-modal .view-card .close-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.view-modal .view-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.view-modal .label {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.view-modal .info-group span:last-child,
+.view-modal .info-stack span:last-child,
+.view-modal .item span:last-child {
+    font-weight: 500;
+    color: #111827; /* strong, readable */
+}
+
+.view-modal .info-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+
+.view-modal .info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+
+.view-modal .items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+
+.view-modal .items-list .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    /* background-color: #f3f4f6; */
+    background-color: #eef2ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+
+.view-modal .summary {
+    border-top: 2px solid #e5e5e5;
+    padding-top: 12px;
+}
+
+.view-modal .summary > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.view-modal .summary .total {
+    font-weight: 600;
+    color: #3b82f6
+}
+
+
+.view-modal .items-list .item:hover {
+    background-color: #dbeafe;
+    cursor: pointer;
+}
+
+.view-modal .view-section .title {
+    color: #f59e0b;
+    font-weight: 630;
+    font-size: 18px;
+}
+
+
+.view-modal .ai-info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.view-modal .ai-info-stack > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-modal .ai-info-stack > div .title {
+    color: #111827;
+    font-size: 16px;
+}
