@@ -26,7 +26,10 @@ const paymentRoutes = require('./routes/paymentRoutes')
 
 app.use(express.json()) // without this line, express will not be able to read the request body for the relevant HTTP methods
 app.use(cors({
-    origin: 'http://localhost:3000' // restrict cors to a specific origin
+    origin: [
+        'http://localhost:3000', // restrict cors to a specific origin
+        'https://intelimart.neurorainnovations.com'
+    ]
 }))
 
 // Register the product routes
