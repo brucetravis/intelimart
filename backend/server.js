@@ -28,7 +28,8 @@ app.use(express.json()) // without this line, express will not be able to read t
 app.use(cors({
     origin: [
         'http://localhost:3000', // restrict cors to a specific origin
-        'https://intelimart.neurorainnovations.com'
+        'https://intelimart.neurorainnovations.com',
+        'https://intelimart.netlify.app'
     ]
 }))
 
@@ -39,7 +40,6 @@ app.use('/cart', cartRoutes) // prefix every route with 'cart'
 app.use('/payments', paymentRoutes)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
-app.use('/orders', ordersRoutes)
 
 // create a simple root route
 app.get('/', (req, res) => {
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 })
 
 // The port we will be using to listen for incoming requests
-const PORT = process.env.REACT_APP.API_URL|| 5000 // get the default PORT set in the environment variables, otherwise set the PORT to 5000
+const PORT = process.env.REACT_APP_API_URL|| 5000 // get the default PORT set in the environment variables, otherwise set the PORT to 5000
 
 // listen for any incoming requests in the specified port
 app.listen(PORT, () => {
