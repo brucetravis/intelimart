@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+.sales-section * {
+  border: 1px solid red;
+  color: black !important;
+}
+
 .sales-section .model {
     max-width: 400px;
 }

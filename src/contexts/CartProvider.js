@@ -92,6 +92,8 @@ export default function CartProvider({ children }) {
                 return newCart
             })
 
+            window.location.reload()
+
             // toast message to notify the user that the product has been added to cart successfully
             toast.success("Product Added to cart Sucessfully.")
 
