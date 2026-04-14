@@ -8,7 +8,7 @@ export default function Sales() {
     const navigate = useNavigate()
     
   return (
-    <div className='sales-section'>
+    <div className='sales-section'style={{ border: "5px solid blue" }}>
         {/* {salesItems.map((itm) => ())} */}
         <div className='sales-section-one'>
             <div className='advert-text'>
