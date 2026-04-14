@@ -13,6 +13,11 @@ const userSchema = new mongoose.Schema({
         required: true // second name cannot be empty
     },
 
+    gender: {
+        type: String, // gender has to be a string
+        required: true // gender cannot be empty
+    },
+
     email: {
         type: String, // email has to be a string
         required: true, // email cannot be empty

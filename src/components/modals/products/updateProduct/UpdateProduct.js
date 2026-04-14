@@ -17,6 +17,8 @@ export default function UpdateProduct({ onClose, productData }) {
     name: "",
     price: "",
     quantity: "",
+    color: "",
+    shade: "",
     description: "",
     image: null
   })
@@ -31,6 +33,8 @@ export default function UpdateProduct({ onClose, productData }) {
         name: productData.name || "",
         price: productData.price || "",
         quantity: productData.quantity || "",
+        color: productData.color || "",
+        shade: productData.shade || "",
         description: productData.description || "",
         image: productData?.image || ""
       })
@@ -116,6 +120,33 @@ export default function UpdateProduct({ onClose, productData }) {
               placeholder='African Hoodie...'
               name='name'
               value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+
+        <div className='upload-product-div'>
+          <div className='product-input'>
+            <h6>Color:</h6>
+            <input
+              type='text'
+              placeholder='Red'
+              name='color'
+              value={formData.color}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          
+          <div className='product-input'>
+            <h6>Shade: </h6>
+            <input 
+              type='text'
+              placeholder="#333"
+              name='shade'
+              value={formData.shade}
               onChange={handleChange}
               required
             />

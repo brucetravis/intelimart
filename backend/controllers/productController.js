@@ -142,7 +142,7 @@ const updateProduct = async (req, res) => {
         const { id } = req.params
 
         //  extract the product data from the request body
-        const { category, name, quantity, price, description } = req.body
+        const { category, name, quantity, price, description, color, shade } = req.body
 
         // extract the image from the request file
         const image = req.file
@@ -151,7 +151,7 @@ const updateProduct = async (req, res) => {
         const total = Number(price) * Number(quantity)
 
         // validate and check if all the data has been made available and if not, send a 400 Bad request
-        if (!category || !name || !quantity || !price || !description || !total) {
+        if (!category || !name || !quantity || !price || !description || !color || !shade || !total) {
             // send a 400 Bad request error
             return res.status(400).json({ message: 'All fileds required' })
         } else if (Number(price) <= 0 || Number(quantity) <= 0) {
@@ -174,6 +174,8 @@ const updateProduct = async (req, res) => {
         product.name = name
         product.quantity = Number(quantity)
         product.price = Number(price)
+        product.color = color
+        product.shade = description
         product.description = description
         product.total = total
 

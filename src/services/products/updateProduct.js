@@ -13,6 +13,8 @@ const updateProduct = async (id, formData) => {
         data.append("name", formData.name)
         data.append("price", formData.price)
         data.append("quantity", formData.quantity)
+        data.append("color", formData.color)
+        data.append("shade", formData.shade)
         data.append("description", formData.description)
 
         // only append the imae if a new file was selected

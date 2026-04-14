@@ -11,12 +11,12 @@ const createUser = async (req, res) => {
     // try catch block to try some code out
 
     // receive the data sent from the frontend
-    const { firstName, secondName, email, password, confirmPassword } = req.body
+    const { firstName, secondName, gender,email, password, confirmPassword } = req.body
 
     // validate the data
 
     // check if any of the data is missing
-    if (!firstName || !secondName || !email || !password || !confirmPassword) {
+    if (!firstName || !secondName || !gender || !email || !password || !confirmPassword) {
         // return an error of status 400 if any of the data above is missing
         return res.status(400).json({ message: "All fields required." })
     }
@@ -50,6 +50,7 @@ const createUser = async (req, res) => {
         const newUser = await User.create({
             firstName: firstName,
             secondName: secondName,
+            gender: gender,
             role: admins.includes(email) ? "admin" : "user",
             email: email,
             password: hashedPassword

@@ -18,6 +18,7 @@ export default function Register() {
   const [ formData, setFormData ] = useState({
     firstName: "",
     secondName: "",
+    gender: "",
     email: "",
     password: "",
     confirmPassword: ""
@@ -34,6 +35,7 @@ export default function Register() {
       const userData = {
         firstName: formData.firstName.trim(),
         secondName: formData.secondName.trim(),
+        gender: formData.gender.trim(),
         email: formData.email.trim(),
         password: formData.password.trim(),
         confirmPassword: formData.confirmPassword.trim()
@@ -46,6 +48,7 @@ export default function Register() {
       setFormData(() => ({
         firstName: "",
         secondName: "",
+        gender: "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -201,6 +204,23 @@ export default function Register() {
                   required
                 />
               </div>
+            </div>
+          )}
+
+          {!isLogIn && (
+            <div className='input-div'>
+              <h6>Gender:</h6>
+
+              <select
+                name='gender'
+                value={formData.gender.trim()}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Category</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
             </div>
           )}
 

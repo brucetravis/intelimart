@@ -119,6 +119,7 @@
     gap: 20px;
 }
 
+.registration-page form select,
 .registration-page form input {
     padding: 5px 10px;
     border: none;
@@ -126,6 +127,8 @@
     outline: none;
     border: 2px solid rgb(12, 12, 236, 0.5);
     width: 100%;
+    cursor: pointer;;
+    transition: all 0.3s ease;
 }
 
 .registration-page form input:focus {

@@ -156,6 +156,7 @@ export default function Products() {
                 <th>Category</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                <th>Color</th>
                 <th>Total Value</th>
                 <th>Stock</th>
                 <th>Status</th>
@@ -180,6 +181,7 @@ export default function Products() {
                     <td>{product.category}</td>
                     <td>{product.quantity}</td>
                     <td>{`$${product.price}`}</td>
+                    <td>{product.color}</td>
                     <td>{product.total}</td>
                     <td>{product.quantity}</td>
                     <td

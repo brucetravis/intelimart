@@ -29,7 +29,7 @@ export default function Dashboard() {
         { cardName: 'users-card active', cardIcon: <Users size={24} stroke="#3b82f6" />, cardText: 'Total Users', cardStat: users?.length },
         { cardName: 'orders-card', cardIcon: <Package size={24} stroke="#facc15" />, cardText: 'Total Orders', cardStat: orders?.length },
         { cardName: 'top-product-sold', cardIcon: <Tag size={24} stroke="#a79bfa" />, cardText: 'Total Sales', cardStat: '3' },
-        { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Revenue', cardStat: '$10000' },
+        { cardName: 'revenue-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Products', cardStat: products.length },
         { cardName: 'lowStock-card', cardIcon: <DollarSign size={24} stroke="#16a34a" />, cardText: 'Total Stock', cardStat: `$${productsTotal.toFixed(2)}` }
     ]
 
