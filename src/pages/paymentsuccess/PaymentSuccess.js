@@ -21,7 +21,7 @@ export default function PaymentSuccess() {
 
       try {
         const res = await axios.get(
-          `http://localhost:5000/verify-payment/${reference}`
+          `${process.env.REACT_APP_API_URL}/verify-payment/${reference}`
         )
 
         setData(res.data.data)

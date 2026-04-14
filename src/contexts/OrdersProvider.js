@@ -37,7 +37,7 @@ export default function OrdersProvider({ children }) {
             }
 
             // send a request to the backend to order a product
-            const res = await axios.post(`http://localhost:5000/orders/makeOrder`, 
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/orders/makeOrder`, 
                 product, 
                 {
                     headers: {
@@ -67,7 +67,7 @@ export default function OrdersProvider({ children }) {
             setLoading(true)
             
             // send a request to the backend to order products
-            const res = await axios.get('http://localhost:5000/orders', {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/orders`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

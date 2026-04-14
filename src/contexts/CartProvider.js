@@ -47,7 +47,7 @@ export default function CartProvider({ children }) {
 
                 // save the user data in the database
                 const response = await axios.post(
-                    'http://localhost:5000/cart/addToCart', 
+                    `${process.env.REACT_APP_API_URL}/cart/addToCart`, 
                     product,
                     {
                         headers: {
@@ -113,7 +113,7 @@ export default function CartProvider({ children }) {
 
             if (token || googleToken) {
                 // send a request to the backend to remove a product from cart
-                const res = await axios.delete(`http://localhost:5000/cart/removeProduct/${productId}`,{
+                const res = await axios.delete(`${process.env.REACT_APP_API_URL}/cart/removeProduct/${productId}`,{
                     headers: {
                         Authorization: `Bearer ${ token || googleToken}`
                     }
@@ -169,7 +169,7 @@ export default function CartProvider({ children }) {
 
             // if the user is logged in
             if (token || userGoogleToken) {
-                const res = await axios.get('http://localhost:5000/cart/fetchCart', {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/cart/fetchCart`, {
                     headers: {
                         Authorization: `Bearer ${token || googleToken}`
                     }

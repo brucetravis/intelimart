@@ -7,7 +7,7 @@ const addProduct = async (productData) => {
     // try catch block to catch possible errors
     try {
         // backend response after sending the request to the backend
-        const res = await axios.post('http://localhost:5000/products', productData)
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/products`, productData)
 
         //  log the response to the console
         console.log("Product Added Successfully.", res?.data)

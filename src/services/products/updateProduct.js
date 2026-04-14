@@ -22,7 +22,7 @@ const updateProduct = async (id, formData) => {
             data.append("image", formData.image)
         }
         // Get a response from the backend
-        const res = await axios.put(`http://localhost:5000/products/${id}`, data)
+        const res = await axios.put(`${process.env.REACT_APP_API_URL}/products/${id}`, data)
 
         // Display the updated product on the console
         console.log('Product update successfully.', res?.data)

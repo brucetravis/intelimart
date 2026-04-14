@@ -49,7 +49,7 @@ export default function PaymentProvider({ children }) {
 
             // backend response
             const res = await axios.post(
-                `http://localhost:5000/payments/create-payment`,
+                `${process.env.REACT_APP_API_URL}/payments/create-payment`,
                 paymentData,
                 {
                     headers: {

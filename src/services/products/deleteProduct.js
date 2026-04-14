@@ -8,7 +8,7 @@ const deleteProduct = async (productId) => {
 
     try {
         // response from the backend when I make a delete request
-        const res = await axios.delete(`http://localhost:5000/products/${productId}`, {
+        const res = await axios.delete(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
