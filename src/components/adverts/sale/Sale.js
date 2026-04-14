@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Sale.css'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 export default function Sales() {
 
