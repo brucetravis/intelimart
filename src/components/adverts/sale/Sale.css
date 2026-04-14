@@ -8,12 +8,10 @@
     box-sizing: border-box;
 }
 
-.sales-section .advert-text h5,
-.sales-section .advert-text h4,
-.sales-section .advert-text p {
-    color: #0f172a !important;
+.sales-section {
+    --bs-heading-color: #0f172a;
+    --bs-body-color: #0f172a;
 }
-
 
 .sales-section .model {
     max-width: 400px;
