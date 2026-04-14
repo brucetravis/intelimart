@@ -45,7 +45,7 @@ export default function AuthProvider({ children }) {
             // console.log("BACKEND DATA: ", userData)
             
             // backend response
-            const response = await axios.post('http://localhost:5000/auth/register', userData)
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, userData)
 
             loadingFunc(false)
 
@@ -111,7 +111,7 @@ export default function AuthProvider({ children }) {
             loadingFunc(true)
 
             // post the data to the backend in order to log in
-            const response = await axios.post('http://localhost:5000/auth/logIn', userData)
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/logIn`, userData)
 
             // Get the token from the backend
             const token = response.data.token

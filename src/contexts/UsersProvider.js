@@ -31,7 +31,7 @@ export default function UsersProvider({ children }) {
             setLoading(true)
 
             // send a request to the backend
-            const res = await axios.get('http://localhost:5000/users', {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
                 headers: {
                     Authorization: `Bearer ${ token || googleToken }`
                 }

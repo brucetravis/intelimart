@@ -1,6 +1,4 @@
 import axios from "axios";
-import { toast } from "react-toastify";
-import { useAuth } from "./AuthProvider";
 
 const { createContext, useContext, useState, useEffect } = require("react");
 
@@ -30,7 +28,7 @@ export default function ProductProvider({ children }) {
             setLoading(true)
 
             //  store the response from the backend
-            const res = await axios.get('http://localhost:5000/products')
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/products`)
 
             // send a response message stating that the read was a success
             // console.log('Products fetched successfully', res.data)
