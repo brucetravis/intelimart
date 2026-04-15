@@ -183,10 +183,9 @@ export default function AuthProvider({ children }) {
         toast.success("User Logged out successfully.")
     }
 
-    const token = localStorage.getItem('token')
-
     // useEffect to update the states on page refresh
     useEffect(() => {
+        const token = localStorage.getItem('token')
         const googleToken = localStorage.getItem('googleToken')
 
         // if there is a token
@@ -199,7 +198,7 @@ export default function AuthProvider({ children }) {
 
     }, []) // Nothing to watch out for user role
 
-
+    const token = localStorage.getItem('token')
     // decode the user token to get the
     const decodedToken = token ? jwtDecode(token) : null
 
