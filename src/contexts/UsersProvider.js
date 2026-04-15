@@ -19,16 +19,16 @@ export default function UsersProvider({ children }) {
     // loading state
     const [ loading, setLoading ] = useState(false) // initilally not loading
 
-    // get the user token from localStorage
-    const token = localStorage.getItem('token')
-    const googleToken = localStorage.getItem('googleToken')
-
     // function to ge all the users
     const getUsers = useCallback(async () => {
 
         try {
             // start loading
             setLoading(true)
+
+            // get the user token from localStorage
+            const token = localStorage.getItem('token')
+            const googleToken = localStorage.getItem('googleToken')
 
             // send a request to the backend
             const res = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
@@ -49,7 +49,7 @@ export default function UsersProvider({ children }) {
         } finally {
             setLoading(false)
         }
-    }, [googleToken, token])
+    }, [])
 
     // fetch all users on mount
     useEffect(() => {

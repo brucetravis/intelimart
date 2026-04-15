@@ -19,15 +19,15 @@ export default function OrdersProvider({ children }) {
     // loading state
     const [ loading, setLoading ] = useState(false) // initial loading state is false
 
-    // get the user token
-    const token = localStorage.getItem('token')
-    const googleToken = localStorage.getItem('googleToken')
-
     // function to order a product
     const orderProduct = async (product) => {
 
         try {
             setLoading(true)
+
+            // get the user token
+            const token = localStorage.getItem('token')
+            const googleToken = localStorage.getItem('googleToken')
 
             // check if the user is logged in
             if (!token) {
@@ -65,11 +65,14 @@ export default function OrdersProvider({ children }) {
 
         try {
             setLoading(true)
+
+            const token = localStorage.getItem('token')
+            const googleToken = localStorage.getItem('googleToken')
             
             // send a request to the backend to order products
             const res = await axios.get(`${process.env.REACT_APP_API_URL}/orders`, {
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token || googleToken}`
                 }
             })
 
@@ -83,7 +86,7 @@ export default function OrdersProvider({ children }) {
         } finally {
             setLoading(false)
         }
-    },[token])
+    },[])
 
     console.log("THESE ARE MY ORDERS: ", orders)
 

@@ -186,9 +186,6 @@ export default function CartProvider({ children }) {
 
                 // update the cart state with the users cart products
                 setIsCartProducts(cart)
-
-                // stop loading
-                setLoading(false)
                 
                 // fetch the cart from local storage if It is present
             } else {
