@@ -13,7 +13,7 @@ import ViewProduct from '../../components/modals/products/viewProduct/ViewProduc
 export default function Products() {
 
   // get the products, state and the state function from the context
-  const { products, fetchProducts, loading } = useProduct()
+  const { products, loading } = useProduct()
 
   // state to open the modal to add a product
   const [ openModal, setOpenModal ] = useState(false) // initially, the modal is closed

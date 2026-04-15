@@ -3,7 +3,7 @@ import './Landing.css'
 import Sales from '../../components/adverts/sale/Sale'
 import { Handshake, MessageCircle, Truck } from 'lucide-react'
 import HandCoin from "mdi-react/HandCoinIcon";
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import ProductCard from '../../components/cards/product/ProductCard';
 import { useProduct } from '../../contexts/ProductProvider'
 

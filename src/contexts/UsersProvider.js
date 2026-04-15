@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const { createContext, useContext, useEffect, useState } = require("react");
+const { createContext, useContext, useEffect, useState, useCallback } = require("react");
 
 // create the context
 const UsersContext = createContext()
@@ -24,7 +24,7 @@ export default function UsersProvider({ children }) {
     const googleToken = localStorage.getItem('googleToken')
 
     // function to ge all the users
-    const getUsers = async () => {
+    const getUsers = useCallback(async () => {
 
         try {
             // start loading
@@ -49,13 +49,13 @@ export default function UsersProvider({ children }) {
         } finally {
             setLoading(false)
         }
-    }
+    }, [googleToken, token])
 
     // fetch all users on mount
     useEffect(() => {
         getUsers()
 
-    }, [])
+    }, [getUsers])
 
     return (
         <UsersContext.Provider value={{

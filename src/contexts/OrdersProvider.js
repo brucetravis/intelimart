@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useAuth } from "./AuthProvider";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -61,7 +61,7 @@ export default function OrdersProvider({ children }) {
 
 
     // function to fetch all orders
-    const fetchOrders = async () => {
+    const fetchOrders = useCallback(async () => {
 
         try {
             setLoading(true)
@@ -83,7 +83,7 @@ export default function OrdersProvider({ children }) {
         } finally {
             setLoading(false)
         }
-    }
+    },[token])
 
     console.log("THESE ARE MY ORDERS: ", orders)
 
@@ -92,7 +92,7 @@ export default function OrdersProvider({ children }) {
         // call the function
         fetchOrders()
 
-    }, []) // Empty dependency array
+    }, [fetchOrders]) // Empty dependency array
     
     return (
         <OrdersContext.Provider value={{ 

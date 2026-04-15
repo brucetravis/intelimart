@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "./AuthProvider";
 import axios from "axios";
@@ -156,7 +156,7 @@ export default function CartProvider({ children }) {
     }
 
     // function to fetch the users cart from the db
-    const fetchCart = async () => {
+    const fetchCart = useCallback(async () => {
         try {
             // set the loading state to true
             setLoading(true)
@@ -208,7 +208,7 @@ export default function CartProvider({ children }) {
         } finally {
             setLoading(false)
         }
-    }
+    }, [guestSessionId, userGoogleToken, setLoading])
 
     const token = localStorage.getItem('token')
 
@@ -217,11 +217,11 @@ export default function CartProvider({ children }) {
             fetchCart() // fetch the cart on mount
         } else {
             // load the saved cart
-            const savedCart = localStorage.getItem(`guest_cart_${guestSessionId}`)
+            const savedCart = sessionStorage.getItem(`guest_cart_${guestSessionId}`)
             setIsCartProducts(savedCart ? JSON.parse(savedCart) : [])
         }
         
-    }, [guestSessionId, token, userGoogleToken])
+    }, [guestSessionId, token, userGoogleToken, fetchCart])
 
     console.log("THESE ARE THE CART PRODUCTS: ", isCartProducts)
 
